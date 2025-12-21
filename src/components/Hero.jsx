@@ -1,16 +1,16 @@
 import gsap from 'gsap';
-import { useGSAP } from '@gsap/react'
-import React from 'react'
+import { useGSAP } from '@gsap/react';
+import React from 'react';
 import { SplitText } from 'gsap/all';
 
 
 const Hero = () => {
 
-    useGSAP(()=> {
-        const heroSplit = new SplitText ('.title', {type: 'lines'});
-        const paragraphSplit = new SplitText ('.subtitle', {type: 'lines'});
 
 
+    useGSAP(() => {
+        const heroSplit = new SplitText('.title', { type: 'lines' });
+        const paragraphSplit = new SplitText('.subtitle', { type: 'lines' });
 
         gsap.from(heroSplit.lines, {
             yPercent: 100,
@@ -25,25 +25,43 @@ const Hero = () => {
             duration: 1.8,
             ease: 'expo.out',
             stagger: 0.06,
-            delay:1,
+            delay: 1,
+        });
 
-        })
+        // Floating scroll indicator
+        gsap.to('.scroll-indicator', {
+            y: 10,             // move down 10px
+            repeat: -1,        // infinite
+            yoyo: true,        // move back up
+            ease: 'power1.inOut',
+            duration: 1,       // 1 second up/down
+            delay: 2           // optional delay after initial animations
+        });
+
         console.log('SplitText:', SplitText);
-    },[]);
+    }, []);
 
+     const scrollToDefinition = () => {
+    gsap.to(window, {
+      scrollTo: '#definition',
+      duration: 1.2,
+      ease: 'power2.inOut',
+    });
+  };
 
     return (
         <>
-        <section id="hero">
-           <h1 className ='title'>Leberkrebs</h1>
-           <h3 className='subtitle'>Eine interaktive Geschichte</h3>
-           <p className='subtitle'>von LUISA FLAIG</p>
-
-        </section>
-
-
-         </>
-    )
-
+            <section id="hero">
+                <div className="flex flex-col">
+                    <h1 className='title'>Leberkrebs</h1>
+                    <h3 className='subtitle'>Eine interaktive Geschichte</h3>
+                    <p className='subtitle'>von LUISA FLAIG</p>
+                    <p className='subtitle scroll-indicator pt-70 cursor-pointer'
+                    onClick={scrollToDefinition}>zum Beginnen Scrollen</p>
+                </div>
+            </section>
+        </>
+    );
 }
-export default Hero
+
+export default Hero;

@@ -11,9 +11,8 @@ const Navbar = () =>{
                 start: 'bottom top'
             }
         });
-        navTween.fromTo('nav', { backgroundColor :'transparent' }, {
+        navTween.fromTo('nav', { backgroundColor : '#858585' }, {
             backgroundcolor: '#3c3c3c50',
-            backgroundFilter: 'blur(10px)',
             duration: 1,
             ease: 'Power1.inOut'
         }  );

@@ -25,7 +25,7 @@ const Definition = () => {
       // Text raus
       tl.to([headlineRef.current, textRef.current], {
         opacity: 0,
-        x: (i) => (i === 0 ? -100 : 100),
+        x: (i) => (i === 0 ? -100 : -100),
         duration: 1,
       });
 
@@ -48,18 +48,12 @@ const Definition = () => {
       className="relative h-screen overflow-hidden"
     >
       {/* Zweispaltiger Text */}
-      <div className="relative z-10 flex flex-col md:flex-row gap-8 px-4 md:px-16 h-full items-center">
-        <h2
-          ref={headlineRef}
-          className="text-xl font-medium md:w-1/2"
-        >
+      <div className="relative z-10 flex flex-col items-center md:flex-row gap-40 px-4 md:px-16 h-full">
+        <h2 ref={headlineRef}>
           Wie findet man zurück ins Leben?
         </h2>
 
-        <p
-          ref={textRef}
-          className="text-lg md:text-xl md:w-1/2"
-        >
+        <p ref={textRef}>
           Thomas ist ein 52-jähriger Mann, bei dem bei einer
           Routineuntersuchung Leberkrebs diagnostiziert wurde...
         </p>
