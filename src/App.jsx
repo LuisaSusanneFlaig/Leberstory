@@ -14,6 +14,9 @@ import Sectionneun from './components/Sectionneun';
 import Sectionzehn from './components/Sectionzehn';
 import Sectionelf from './components/Sectionelf';
 import Sectionzwoelf from './components/Sectionzwoelf';
+import Sectiondreizehn from './components/Sectiondreizehn';
+import Sectionvierzehn from './components/Sectionvierzehn';
+import Sectionfuenfzehn from './components/Sectionfuenfzehn';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -33,7 +36,9 @@ const App =() => {
             <Sectionzehn></Sectionzehn>
             <Sectionelf></Sectionelf>
             <Sectionzwoelf></Sectionzwoelf>
-
+            <Sectiondreizehn></Sectiondreizehn>
+            <Sectionvierzehn></Sectionvierzehn>
+            <Sectionfuenfzehn></Sectionfuenfzehn>
             
         </main>
        
