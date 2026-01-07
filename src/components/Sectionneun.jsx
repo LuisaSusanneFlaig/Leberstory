@@ -78,12 +78,12 @@ const Sectionneun = () => {
       {/* Layout 1 */}
       <div
         ref={layout1Ref}
-        className="absolute inset-0  w-full flex p-20"
+        className="absolute inset-0  w-full flex pt-50"
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col m-20">
         <h2>Wie wird Leberkrebs diagnostiziert?</h2>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col m-20">
         <p>1. Sind Tumore in der Leber vorhanden? Wenn ja, wie viele?</p>
         <img src="/src/images/LT1.png" alt="Layout 1"  />
         </div>
@@ -94,11 +94,11 @@ const Sectionneun = () => {
         ref={layout2Ref}
         className="absolute inset-0 w-full flex pt-50"
       >
-        <div className=" w-1/3flex flex-col pl-20">
+        <div className=" w-1/2 flex flex-col m-20">
         <p> Zum Auffinden von Lebertumoren  können verschiedene bildgebende Verfahren eingesetzt werden, darunter:</p>
         </div>
-        <div className=" w-2/3 flex flex-col pr-10">
-        <img src="/src/images/Ultrasound.png" alt="Layout 2" className="w-3/4" />
+        <div className=" w-1/2 flex flex-col m-20 items-center">
+        <img src="/src/images/Ultrasound.png" alt="Layout 2" className="w-1/2" />
         <p>Ultraschall</p>
         </div>
       </div>
@@ -122,25 +122,24 @@ const Sectionneun = () => {
       </div>
 
         {/* Layout 5 */}
-        <div ref={layout5Ref} className="absolute inset-0  w-full flex p-20">
-        <div className="flex flex-row">
-            <img src="/src/images/LT2.png" alt="Layout 1"  />
-        <p>2. Wo genau befinden sich die Tumore?</p>
-        
+        <div ref={layout5Ref} className="absolute flex items-center justify-center inset-0 w-full flex pt-50">
+          <div className="flex flex-col items-center">
+          <p>2. Wo genau befinden sich die Tumore?</p>
+            <img src="/src/images/LT2.png" alt="Layout 1" />
         </div>
         </div>
         {/* Layout 6 */}
-        <div ref={layout6Ref} className="absolute inset-0  w-full flex p-20">
-        <div className="flex flex-row">
+        <div ref={layout6Ref} className="absolute flex items-center justify-center inset-0 w-full flex pt-50">
+        <div className="flex flex-col items-center">
+          <p>3. Wie groß sind die Tumore?</p>
             <img src="/src/images/LT3.png" alt="Layout 1"  />
-        <p>3. Wie groß sind die Tumore?</p>
         </div>
         </div>
         {/* Layout 7 */}
-        <div ref={layout7Ref} className="absolute inset-0  w-full flex p-20">
-        <div className="flex flex-row">
+        <div ref={layout7Ref} className="absolute flex items-center justify-center inset-0 w-full flex pt-50">
+        <div className="flex flex-col items-center">
+               <p>4. Was ist der genaue Typ?</p>
             <img src="/src/images/LT4.png" alt="Layout 1"  />
-        <p>4. Was ist der genaue Typ?</p>
         </div>
         </div>
 

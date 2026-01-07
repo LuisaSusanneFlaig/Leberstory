@@ -73,48 +73,53 @@ const Sectiondreizehn = () => {
       ref={containerRef}
       className="relative h-screen overflow-hidden"
     >
-      {/* LAYOUT 1 */}
-      <div
-        ref={layout1Ref}
-        className="absolute inset-0 w-full flex p-20"
-      >
-        <div className="h-full flex-col items-center justify-center p-20">
-          <h2>Prognose von Leberkrebs</h2>
-        </div>
+{/* LAYOUT 1 */}
+<div
+  ref={layout1Ref}
+  className="absolute inset-0 grid grid-cols-2 gap-8 pt-50"
+>
+  {/* Column 1 */}
+  <div className="flex flex-col m-20">
+    <h2>Prognose von Leberkrebs</h2>
+  </div>
 
-        <div className="h-full flex-row items-center justify-center p-20">
-          <p>
-            Das hängt vom Stadium des Krebses und dem Zustand der Leber ab.
-          </p>
-          <p>5 Jahres Überlebensrate:</p>
+  {/* Column 2 */}
+  <div className="flex flex-col m-20">
+    {/* Row 1: Text */}
+    <div>
+      <p>Das hängt vom Stadium des Krebses und dem Zustand der Leber ab.</p>
+      <p>5 Jahres Überlebensrate:</p>
+    </div>
 
-          <div className="h-full flex-col justify-center p-20">
-            <h2>18 %</h2>
-            <img
-              src="src/images/manandwoman.png"
-              alt="manandwoman"
-              className="scale-50"
-            />
-          </div>
-        </div>
-      </div>
+    {/* Row 2: Bild + Prozent nebeneinander */}
+    <div className="flex flex-col m-20">
+      <h2>18%</h2>
+      <img
+        src="src/images/manandwoman.png"
+        alt="manandwoman"
+        className="w-32 h-auto"
+      />
+    </div>
+  </div>
+</div>
+
 
       {/* LAYOUT 2 */}
       <div
         ref={layout2Ref}
-        className="absolute inset-0 grid grid-cols-2 gap-8 items-center"
+        className="absolute inset-0 grid grid-cols-2 pt-50"
       >
         {/* STEP 1 */}
-        <div className="grid grid-cols-2 items-center gap-4 step step-1">
+        <div className="grid grid-cols-2 m-20">
           <p>Tumor entfernt:</p>
           <img
             src="/src/images/smiley.png"
             alt="smiley"
-            className="w-16 h-16"
+            className="w-1/2"
           />
         </div>
 
-        <div className="grid gap-6">
+        <div className="grid m-20">
           {/* STEP 2 TEXT */}
           <p>
             Stadium I Tumore (einzelne Tumore, ohne Befall der Blutgefäße oder
@@ -122,8 +127,8 @@ const Sectiondreizehn = () => {
           </p>
 
           {/* STEP 2 IMAGES */}
-          <div className="grid grid-cols-2 gap-8 items-center step step-2">
-            <div className="flex flex-col items-center">
+          <div className="grid grid-cols-2">
+            <div className="flex flex-row">
               <p>54%</p>
               <img
                 src="/src/images/frau.png"
@@ -132,7 +137,7 @@ const Sectiondreizehn = () => {
               />
             </div>
 
-            <div className="flex flex-col items-center">
+            <div className="flex flex-row  ">
               <p>62%</p>
               <img
                 src="/src/images/mann.png"
@@ -148,7 +153,7 @@ const Sectiondreizehn = () => {
           </p>
 
           {/* STEP 3 IMAGE */}
-          <div className="flex items-center gap-4 step step-3">
+          <div className="flex flex-row ">
             <p>2%</p>
             <img
               src="/src/images/manandwoman.png"

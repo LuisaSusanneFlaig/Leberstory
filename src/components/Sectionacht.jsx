@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
@@ -15,87 +15,124 @@ const svgs = [
 ];
 
 const Sectionacht = () => {
-  const containerRef = useRef(null);
-  const h2Ref = useRef(null);
-  const initialTextRef = useRef(null);
+  const sectionRef = useRef(null);
+  const introRef = useRef(null);
   const svgRefs = useRef([]);
+
   svgRefs.current = [];
 
-  const addToRefs = (el) => {
+  const addToRefs = useCallback((el) => {
     if (el && !svgRefs.current.includes(el)) {
       svgRefs.current.push(el);
     }
-  };
+  }, []);
 
   useLayoutEffect(() => {
-  const ctx = gsap.context(() => {
-    // Set initial states
-    gsap.set(svgRefs.current, { opacity: 0, x: 100 }); // SVGs start off to the right
-    gsap.set([h2Ref.current, initialTextRef.current], { x: 0, opacity: 1 }); // initial text starts normally
+    const ctx = gsap.context(() => {
+      // Initial states
+      gsap.set(svgRefs.current, { opacity: 0, x: 120 });
+      gsap.set(introRef.current, { x: 0 });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "top top",
-        end: "+=400%",
-        scrub: true,
-        pin: true,
-      },
-    });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "+=400%",
+          scrub: true,
+          pin: true,
+        },
+      });
 
-    // Move initial text out to the left
-    tl.to([h2Ref.current, initialTextRef.current], {
-      opacity: 0,
-      x: -200, // move further left for clear exit
-      duration: 1,
-    });
+      // 1️⃣ Slide intro content out to the left
+      tl.to(introRef.current, {
+        xPercent: -100,
+        duration: 1,
+        ease: "power2.inOut",
+      });
 
-    // Move SVGs in from the right with stagger
-    tl.to(svgRefs.current, {
-      opacity: 1,
-      x: 0, // come to original position
-      duration: 0.5,
-      stagger: 0.2,
-    });
-  }, containerRef);
+      // 2️⃣ Animate SVG cards in from the right
+      tl.to(
+        svgRefs.current,
+        {
+          opacity: 1,
+          x: 0,
+          stagger: 0.2,
+          duration: 0.8,
+          ease: "power3.out",
+        },
+        "-=0.3"
+      );
+    }, sectionRef);
 
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
+
   return (
     <section
+      ref={sectionRef}
       id="sectionacht"
-      ref={containerRef}
       className="relative h-screen overflow-hidden"
     >
-      {/* Initial content */}
-      <div className="absolute inset-0 flex  justify-center pt-100">
-        <h2 ref={h2Ref} className="mb-8 text-3xl font-bold ">
+      {/* INTRO CONTENT */}
+      <div
+        ref={introRef}
+        className="absolute inset-0 flex justify-center pt-20"
+      >
+        <h2 className="w-1/2 m-20">
           Wie macht sich Leberkrebs bemerkbar?
         </h2>
-        <div ref={initialTextRef} className="flex-col space-y-4  max-w-2xl">
+        <div className="w-1/2 m-20">
           <p>
-            Da die Leber nicht schmerzempfindlich ist, verursacht Leberkrebs in der Regel zunächst keine Symptome.
+            Da die Leber nicht schmerzempfindlich ist, verursacht Leberkrebs
+            in der Regel zunächst keine Symptome.
           </p>
           <p>
-            Im fortgeschrittenen Stadium äußert sich Leberkrebs auf verschiedene Weise.
+            Im fortgeschrittenen Stadium äußert sich Leberkrebs auf
+            verschiedene Weise.
           </p>
         </div>
       </div>
 
-      {/* SVG grid content */}
+      {/* SVG GRID */}
       <div className="absolute inset-0 flex items-center justify-center p-20">
         <div className="grid grid-cols-3 gap-8">
+          {/* FIRST ROW */}
           {svgs.slice(0, 3).map((item, idx) => (
-            <div key={idx} ref={addToRefs} className="flex flex-col items-center text-center">
-              <img src={item.src} alt={`SVG ${idx + 1}`} className="max-w-xs" />
-              <p className="mt-2">{item.text}</p>
+            <div
+              key={idx}
+              ref={addToRefs}
+              className="flex flex-col items-center text-center"
+            >
+              {/* ICON SLOT */}
+              <div className="h-32 w-full flex items-center justify-center">
+                <img
+                  src={item.src}
+                  alt={item.text}
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+
+              {/* TEXT */}
+              <p className="mt-4">{item.text}</p>
             </div>
           ))}
+
+          {/* SECOND ROW */}
           <div className="col-span-3 grid grid-cols-4 gap-8">
             {svgs.slice(3).map((item, idx) => (
-              <div key={idx + 3} ref={addToRefs} className="flex flex-col items-center text-center">
-                <img src={item.src} alt={`SVG ${idx + 4}`} className="max-w-xs" />
-                <p className="mt-2">{item.text}</p>
+              <div
+                key={idx + 3}
+                ref={addToRefs}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="h-32 w-full flex items-center justify-center">
+                  <img
+                    src={item.src}
+                    alt={item.text}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <p className="mt-4">{item.text}</p>
               </div>
             ))}
           </div>

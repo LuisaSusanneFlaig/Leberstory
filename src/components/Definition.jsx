@@ -48,7 +48,7 @@ const Definition = () => {
       className="relative h-screen overflow-hidden"
     >
       {/* Zweispaltiger Text */}
-      <div className="relative z-10 flex flex-col items-center md:flex-row gap-40 px-4 md:px-16 h-full">
+      <div className="relative z-10 flex flex-col md:flex-row gap-40 px-4 md:px-16 h-full p-50">
         <h2 ref={headlineRef}>
           Wie findet man zurück ins Leben?
         </h2>

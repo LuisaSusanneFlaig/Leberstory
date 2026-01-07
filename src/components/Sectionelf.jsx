@@ -54,14 +54,14 @@ const Sectionelf = () => {
       {/* Layout 1 */}
       <div
         ref={layout1Ref}
-        className="absolute inset-0  w-full flex p-20"
+        className="absolute inset-0  w-full flex pt-20"
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col m-20">
         <h2>Heilende Behandlung für Leberkrebs</h2>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col m-20">
         <p>Bei chirurgischen Eingriffen werden Teile der Leber, die Tumore enthalten, entfernt.</p>
-        <img src="/src/images/Curative2.png" alt="Layout 1"  />
+        <img src="/src/images/Curative2.png" alt="Layout 1"  className="w-3/4"/>
         </div>
       </div>
 
@@ -70,11 +70,11 @@ const Sectionelf = () => {
         ref={layout2Ref}
         className="absolute inset-0 w-full flex pt-50"
       >
-          <div className=" w-1/3flex flex-col pl-20">
+          <div className=" w-1/3flex flex-col m-20">
         <p>Tumore können auch mit einer Ablation behandelt werden.</p>
         <p>Dabei wird eine Nadel in den Tumor eingeführt, durch die Hitze oder Mikrowellen geleitet werden, um den Tumor zu zerstören.</p>
         </div>
-        <div className=" w-2/3 flex flex-col pr-10">
+        <div className=" w-2/3 flex flex-col m-20">
         <img src="/src/images/Curative3.png" alt="Layout 3" className="max-w" />
         </div>
       </div>
@@ -84,11 +84,11 @@ const Sectionelf = () => {
         ref={layout3Ref}
         className="absolute inset-0 w-full flex pt-50"
       >
-        <div className=" w-1/3flex flex-col pl-20">
+        <div className=" w-1/3flex flex-col m-20">
         <p>Darüber hinaus können winzige, mit radioaktivem Material gefüllte Kügelchen in die Lebergefäße eingebracht werden.</p>
         <p>Der Tumor wird lokal von innen bestrahlt, was zum Absterben der Tumorzellen führt.</p>
         </div>
-        <div className=" w-2/3 flex flex-col pr-10">
+        <div className=" w-2/3 flex flex-col m-20">
         <img src="/src/images/Curative4.png" alt="Layout 3" className="max-w" />
         </div>
       </div>

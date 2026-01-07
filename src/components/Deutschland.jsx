@@ -77,16 +77,16 @@ const Deutschland = () => {
   return (
     <section id="deutschland" ref={containerRef} className="relative h-screen overflow-hidden">
       {/* PANEL 1 */}
-      <div className="absolute inset-0 flex">
+      <div className="absolute inset-0 flex pt-50">
         <div
           ref={panel1Left}
-          className="w-1/2 h-full flex items-center justify-center p-20 "
+          className="w-1/2 h-full flex justify-center m-20"
         >
           <p>In Deutschland werden jährlich etwa 8.790 neue Fälle von Leberkrebs diagnostiziert.</p>
         </div>
         <div
           ref={panel1Right}
-          className="w-1/2 h-full flex items-center justify-center p-20 "
+          className="w-1/2 h-full flex  justify-center m-20 "
         >
           <p>
             In den letzten 35 Jahren hat sich die Zahl der Neuerkrankungen verdoppelt –
@@ -96,16 +96,16 @@ const Deutschland = () => {
       </div>
 
       {/* PANEL 2 */}
-      <div className="absolute inset-0 flex">
+      <div className="absolute inset-0 flex pt-50">
         <div
           ref={panel2Left}
-          className="w-1/2 h-full flex items-center justify-center p-20"
+          className="w-1/2 h-full flex  justify-center m-20"
         >
           <p>Auffällig ist dabei das Geschlechterverhältnis: Männer sind dreimal häufiger betroffen als Frauen.</p>
         </div>
         <div
           ref={panel2Right}
-          className="w-1/2 h-full flex items-center justify-center p-20"
+          className="w-1/2 h-full flex items-center justify-center"
         >
           <img
             src="/src/images/img1.png"
@@ -118,9 +118,9 @@ const Deutschland = () => {
       {/* PANEL 3 */}
       <div
         ref={panel3}
-        className="absolute inset-0 flex items-center justify-center p-24 text-5xl p-120"
+        className=" absolute inset-0 flex  justify-center pt-50"
       >
-        <p>
+        <p className="m-20">
          Das durchschnittliche Alter bei der Erstdiagnose von Leberkrebs unterscheidet sich leicht zwischen den Geschlechtern. Bei Männern liegt das Durchschnittsalter der Diagnose bei 69,9 Jahren, während es bei Frauen mit 72,1 Jahren geringfügig höher ist.
         </p>
       </div>

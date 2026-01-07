@@ -54,16 +54,16 @@ const Sectionzwoelf = () => {
       {/* Initial content */}
       <div
         ref={initialRef}
-        className="absolute inset-0 flex items-center justify-center"
+        className="absolute inset-0 flex  justify-center pt-50"
       >
-        <div className="grid grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-2 m-20">
           <div>
-            <h2 className="text-3xl font-bold">
+            <h2>
               Palliative Behandlung für Leberkrebs
             </h2>
           </div>
 
-          <div className="flex flex-col space-y-6">
+          <div className="flex flex-col ">
             <p>
               Wenn keine Aussicht auf Heilung besteht, kann eine palliative
               Therapie das Wachstum des Tumors verlangsamen und die Symptome
@@ -85,14 +85,14 @@ const Sectionzwoelf = () => {
       {/* Remaining content */}
       <div
         ref={remainingRef}
-        className="absolute inset-0 flex flex-col items-center justify-center p-20"
+        className="absolute inset-0 flex flex-col pt-50"
       >
-        <div className="flex flex-row gap-16 max-w-6xl w-full">         
-             <div className="w-1/2 flex flex-col gap-6">
+        <div className="flex flex-row   m-20">         
+             <div className="w-1/2 flex flex-col ">
             <p>Spezielle Chemotherapien verlangsamen das Tumorwachstum.</p>
             <p>Schmerzmittel und kalorienreiches Essen reduzieren die Symptome.</p>
           </div>
-          <div className="w-1/2 flex flex-row gap-8">
+          <div className="w-1/2 flex flex-row ">
             {svgs.slice(3, 6).map((item, idx) => (
               <div key={idx + 3} className="flex flex-col items-center text-center">
                 <img src={item.src} alt={item.text} className="max-w-xs" />

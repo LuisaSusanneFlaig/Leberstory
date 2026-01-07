@@ -58,27 +58,27 @@ const Sectionzehn = () => {
       {/* Layout 1 */}
       <div
         ref={layout1Ref}
-        className="absolute inset-0  w-full flex p-20"
+        className="absolute inset-0  w-full flex pt-50"
       >
-        <div className="flex flex-col">
+        <div className="w-1/2 flex flex-col m-20">
         <h2>Wie wird Leberkrebs behandelt?</h2>
         </div>
-        <div className="flex flex-col">
+        <div className="w-1/2 flex flex-col m-20">
         <p>Die Behandlungsplanung hängt davon ab, wie weit die Krankheit  fortgeschritten ist und in welchem Zustand sich die Leber befindet.</p>
-        <img src="/src/images/Behandlung.png" alt="Layout 1"  />
+        <img src="/src/images/Behandlung.png" alt="Layout 1" className="w-3/4" />
         </div>
       </div>
 
       {/* Layout 2 */}
       <div
         ref={layout2Ref}
-        className="absolute inset-0 w-full flex pt-50"
+        className="absolute inset-0 w-full flex pt-50" 
       >
-        <div className=" w-1/3flex flex-col pl-20">
+        <div className=" flex flex-col m-20">
         <p> Außerdem spielen das Alter und der allgemeine Gesundheitszustand der Patienten eine wichtige Rolle.</p>
         <p>Abhängig davon gibt es heilende und palliative Behandlungen.</p>
         </div>
-        <div className=" w-2/3 flex flex-col pr-10">
+        <div className="  flex flex-col m-20">
         <p>Der Grad der Veränderung lässt sich nur durch eine mikroskopische Untersuchung der Krebszellen feststellen.</p>
         <p>Bei einer Biopsie wird eine kleine Probe des Lebergewebes entnommen und unter dem Mikroskop untersucht.</p>
         </div>
@@ -89,11 +89,11 @@ const Sectionzehn = () => {
         ref={layout3Ref}
         className="absolute inset-0 w-full flex pt-50"
       >
-        <div className=" w-1/3flex flex-col pl-20">
+        <div className=" w-1/3flex flex-col m-20">
         <p>Für die Therapieplanung ist es wichtig, das Ausmaß der Veränderung der Zellen zu verstehen.</p>
         <p>Der Schweregrad eines Tumors hängt davon ab, wie stark sich die Zellen bereits bösartig verändert haben.</p>
         </div>
-        <div className=" w-2/3 flex flex-col pr-10">
+        <div className=" w-2/3 flex flex-col m-20">
         <img src="/src/images/Biopsie.png" alt="Layout 3" className="max-w" />
         </div>
       </div>

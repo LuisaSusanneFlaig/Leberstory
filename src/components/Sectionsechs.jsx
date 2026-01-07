@@ -9,10 +9,10 @@ const Sectionsechs = () => {
      
       className="relative h-screen overflow-hidden"
     >
-      <div className="absolute inset-0 flex">
+      <div className="absolute inset-0 flex pt-50">
         <div
           
-          className="w-1/2 h-full flex items-center justify-center p-20"
+          className="w-1/2 h-full flex justify-center m-20"
         >
           <p>
             Die Leber ist das größte und wichtigste Organ zur Verdauung von
@@ -22,7 +22,7 @@ const Sectionsechs = () => {
 
         <div
          
-          className="w-1/2 h-full flex items-center justify-center p-20"
+          className="w-1/2 h-full flex justify-center m-20"
         >
           <p>
             Sie befindet sich im rechten Oberbauch, unterhalb des Herzens. Sie
