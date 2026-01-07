@@ -78,6 +78,10 @@ body {
     @apply md:flex-1 text-4xl font-medium;
   }
 
+  li {
+    @apply md:flex-1 text-4xl font-medium;
+  }
+
   /* ================================
      SECTIONS
   ================================ */

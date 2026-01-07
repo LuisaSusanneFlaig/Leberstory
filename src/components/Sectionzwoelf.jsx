@@ -52,58 +52,72 @@ const Sectionzwoelf = () => {
       className="relative h-screen overflow-hidden"
     >
       {/* Initial content */}
-      <div
-        ref={initialRef}
-        className="absolute inset-0 flex  justify-center pt-50"
-      >
-        <div className="grid grid-cols-2 m-20">
-          <div>
-            <h2>
-              Palliative Behandlung für Leberkrebs
-            </h2>
-          </div>
+<div
+  ref={initialRef}
+  className="absolute inset-0 flex justify-center pt-50"
+>
+  <div className="grid grid-cols-2 m-20">
+    <div>
+      <h2>Palliative Behandlung für Leberkrebs</h2>
+    </div>
 
-          <div className="flex flex-col ">
-            <p>
-              Wenn keine Aussicht auf Heilung besteht, kann eine palliative
-              Therapie das Wachstum des Tumors verlangsamen und die Symptome
-              lindern.
-            </p>
+    <div className="flex flex-col">
+      <p>
+        Wenn keine Aussicht auf Heilung besteht, kann eine palliative
+        Therapie das Wachstum des Tumors verlangsamen und die Symptome
+        lindern.
+      </p>
 
-            <div className="grid grid-cols-3 gap-6">
-              {svgs.slice(0, 3).map((item, idx) => (
-                <div key={idx} className="flex flex-col items-center text-center">
-                  <img src={item.src} alt={item.text} className="max-w-xs" />
-                  <p className="mt-2">{item.text}</p>
-                </div>
-              ))}
+      {/* SVG GRID */}
+      <div className="grid grid-cols-3 gap-6 mt-6">
+        {svgs.slice(0, 3).map((item, idx) => (
+          <div key={idx} className="flex flex-col items-center text-center">
+            {/* ICON SLOT */}
+            <div className="h-32 w-full flex items-center justify-center">
+              <img
+                src={item.src}
+                alt={item.text}
+                className="max-h-full max-w-full object-contain"
+              />
             </div>
+            {/* TEXT */}
+            <p className="mt-2">{item.text}</p>
           </div>
-        </div>
+        ))}
       </div>
+    </div>
+  </div>
+</div>
 
-      {/* Remaining content */}
-      <div
-        ref={remainingRef}
-        className="absolute inset-0 flex flex-col pt-50"
-      >
-        <div className="flex flex-row   m-20">         
-             <div className="w-1/2 flex flex-col ">
-            <p>Spezielle Chemotherapien verlangsamen das Tumorwachstum.</p>
-            <p>Schmerzmittel und kalorienreiches Essen reduzieren die Symptome.</p>
+{/* Remaining content */}
+<div
+  ref={remainingRef}
+  className="absolute inset-0 flex flex-col pt-50"
+>
+  <div className="flex flex-row m-20">
+    <div className="w-1/2 flex flex-col gap-4">
+      <p>Spezielle Chemotherapien verlangsamen das Tumorwachstum.</p>
+      <p>Schmerzmittel und kalorienreiches Essen reduzieren die Symptome.</p>
+    </div>
+
+    {/* SVG GRID */}
+    <div className="w-1/2 grid grid-cols-3 gap-6">
+      {svgs.slice(3, 6).map((item, idx) => (
+        <div key={idx + 3} className="flex flex-col items-center text-center">
+          <div className="h-32 w-full flex items-center justify-center">
+            <img
+              src={item.src}
+              alt={item.text}
+              className="max-h-full max-w-full object-contain"
+            />
           </div>
-          <div className="w-1/2 flex flex-row ">
-            {svgs.slice(3, 6).map((item, idx) => (
-              <div key={idx + 3} className="flex flex-col items-center text-center">
-                <img src={item.src} alt={item.text} className="max-w-xs" />
-                <p className="mt-2">{item.text}</p>
-              </div>
-            ))}
-          </div>
-
-
+          <p className="mt-2">{item.text}</p>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
     </section>
   );
 };
