@@ -35,33 +35,33 @@ const Sectionneun = () => {
       tl.to(layout1Ref.current, { x: -200, opacity: 0, duration: 1 });
 
       // Layout 2 slides in from the left
-      tl.fromTo(layout2Ref.current, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+      tl.fromTo(layout2Ref.current, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
 
       // Layout 2 scrolls out to the left
       tl.to(layout2Ref.current, { x: -200, opacity: 0, duration: 1 });
 
       // Layout 3 slides in from the left
-      tl.fromTo(layout3Ref.current, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+      tl.fromTo(layout3Ref.current, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
 
       // Layout 3 scrolls out to the left
       tl.to(layout3Ref.current, { x: -200, opacity: 0, duration: 1 });
 
       // Layout 4 slides in from the left
-      tl.fromTo(layout4Ref.current, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+      tl.fromTo(layout4Ref.current, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
        
       // Layout 4 scrolls out to the left
       tl.to(layout4Ref.current, { x: -200, opacity: 0, duration: 1 });
 
       // Layout 5 slides in from the left
-        tl.fromTo(layout5Ref.current, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        tl.fromTo(layout5Ref.current, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
         // Layout 5 scrolls out to the left
         tl.to(layout5Ref.current, { x: -200, opacity: 0, duration: 1 });
         // Layout 6 slides in from the left
-        tl.fromTo(layout6Ref.current, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        tl.fromTo(layout6Ref.current, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
         // Layout 6 scrolls out to the left
         tl.to(layout6Ref.current, { x: -200, opacity: 0, duration: 1 });
         // Layout 7 slides in from the left
-        tl.fromTo(layout7Ref.current, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+        tl.fromTo(layout7Ref.current, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
 
 
     }, containerRef);

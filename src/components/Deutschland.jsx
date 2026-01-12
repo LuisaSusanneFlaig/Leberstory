@@ -46,14 +46,14 @@ const Deutschland = () => {
       /* PANEL 2 REIN */
       tl.fromTo(
         panel2Left.current,
-        { x: "-100%", opacity: 0 },
+        { x: "100%", opacity: 0 },
         { x: "0%", opacity: 1, duration: 1 }
       );
       tl.fromTo(
         panel2Right.current,
         { x: "100%", opacity: 0 },
         { x: "0%", opacity: 1, duration: 1 },
-        "<"
+      
       );
 
       /* PANEL 2 RAUS */
@@ -120,7 +120,7 @@ const Deutschland = () => {
         ref={panel3}
         className=" absolute inset-0 flex  justify-center pt-50"
       >
-        <p className="m-20">
+        <p className="m-20 max-w-3xl">
          Das durchschnittliche Alter bei der Erstdiagnose von Leberkrebs unterscheidet sich leicht zwischen den Geschlechtern. Bei Männern liegt das Durchschnittsalter der Diagnose bei 69,9 Jahren, während es bei Frauen mit 72,1 Jahren geringfügig höher ist.
         </p>
       </div>

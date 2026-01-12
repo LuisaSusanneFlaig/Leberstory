@@ -13,7 +13,7 @@ const Sectionfuenfzehn = () => {
     const ctx = gsap.context(() => {
       // Initial states
       gsap.set(layout2Ref.current, { opacity: 0, x: 200 });
-      gsap.set(".step", { opacity: 0, y: 30 });
+      gsap.set(".step", { opacity: 0, x: 30 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -32,11 +32,11 @@ const Sectionfuenfzehn = () => {
       tl.to(layout2Ref.current, { opacity: 1, x: 0, duration: 0.8 });
 
       // Animate steps sequentially
-      tl.to(".step-1", { opacity: 1, y: 0, duration: 0.6 });
-      tl.to(".step-2", { opacity: 1, y: 0, duration: 0.6 });
-      tl.to(".step-3", { opacity: 1, y: 0, duration: 0.6 });
-      tl.to(".step-4", { opacity: 1, y: 0, duration: 0.6 });
-      tl.to(".step-5", { opacity: 1, y: 0, duration: 0.6 });
+      tl.to(".step-1", { opacity: 1, x: 0, duration: 0.6 });
+      tl.to(".step-2", { opacity: 1, x: 0, duration: 0.6 });
+      tl.to(".step-3", { opacity: 1, x: 0, duration: 0.6 });
+      tl.to(".step-4", { opacity: 1, x: 0, duration: 0.6 });
+      tl.to(".step-5", { opacity: 1, x: 0, duration: 0.6 });
     }, containerRef);
 
     return () => ctx.revert();
@@ -44,8 +44,9 @@ const Sectionfuenfzehn = () => {
 
   return (
     <section
+      id="sectionfuenfzehn"
       ref={containerRef}
-      className="relative min-h-screen overflow-hidden"
+      className="relative h-screen overflow-hidden"
     >
       {/* Layout 1 */}
       <div ref={layout1Ref} className="absolute grid grid-cols-2 pt-50">

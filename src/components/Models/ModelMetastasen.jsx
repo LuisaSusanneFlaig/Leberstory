@@ -17,6 +17,7 @@ const ModelMetastasen = () => {
             color: "white",
             padding: "8px 12px",
             borderRadius: "6px",
+            lineHeight: "1.2",
             fontSize: isMobile ? "12px" : "14px",
             width: isMobile ? "150px" : isTablet ? "180px" : "220px",
             maxWidth: "220px",

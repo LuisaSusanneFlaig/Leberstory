@@ -13,7 +13,7 @@ const Hero = () => {
         const paragraphSplit = new SplitText('.subtitle', { type: 'lines' });
 
         gsap.from(heroSplit.lines, {
-            yPercent: 100,
+            yPercent: 150,
             duration: 1.8,
             ease: 'expo.out',
             stagger: 0.06,
@@ -21,7 +21,7 @@ const Hero = () => {
 
         gsap.from(paragraphSplit.lines, {
             opacity: 0,
-            yPercent: 100,
+            yPercent: 150,
             duration: 1.8,
             ease: 'expo.out',
             stagger: 0.06,
@@ -52,11 +52,11 @@ const Hero = () => {
     return (
         <>
             <section id="hero">
-                <div className="flex flex-col">
-                    <h1 className='title'>Leberkrebs</h1>
-                    <h3 className='subtitle'>Eine interaktive Geschichte</h3>
+                <div className="flex flex-col items-center">
+                    <h1 className='title pt-20'>Leberkrebs</h1>
+                    <h3 className='subtitle mt-10'>Eine interaktive Geschichte</h3>
                     <p className='subtitle'>von LUISA FLAIG</p>
-                    <p className='subtitle scroll-indicator pt-70 cursor-pointer'
+                    <p className='subtitle scroll-indicator pt-50 cursor-pointer'
                     onClick={scrollToDefinition}>zum Beginnen Scrollen</p>
                 </div>
             </section>

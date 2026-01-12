@@ -30,13 +30,13 @@ const Sectionelf = () => {
       tl.to(layout1Ref.current, { x: -200, opacity: 0, duration: 1 });
 
       // Layout 2 slides in from the left
-      tl.fromTo(layout2Ref.current, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+      tl.fromTo(layout2Ref.current, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
 
       // Layout 2 scrolls out to the left
       tl.to(layout2Ref.current, { x: -200, opacity: 0, duration: 1 });
 
       // Layout 3 slides in from the left
-      tl.fromTo(layout3Ref.current, { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+      tl.fromTo(layout3Ref.current, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
 
 
 
@@ -47,7 +47,7 @@ const Sectionelf = () => {
 
   return (
     <section
-      id="sectionneun"
+      id="sectionelf"
       ref={containerRef}
       className="relative h-screen overflow-hidden"
     >

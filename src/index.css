@@ -49,6 +49,7 @@ body {
   /* ----- Navigation ----- */
   nav {
     @apply fixed z-50 w-full;
+    
   }
 
   nav > div {
@@ -64,6 +65,12 @@ body {
 
   nav a {
     @apply cursor-pointer text-3xl text-nowrap;
+    transition: color 0.3s ease;
+    color: #bbb;
+  }
+
+  nav a.active {
+    color: #fff;
   }
 
   nav ul {
@@ -88,7 +95,7 @@ body {
 
   /* ----- Hero ----- */
   #hero {
-    @apply relative z-10 w-full min-h-dvh
+    @apply w-full min-h-dvh
            bg-linear-to-b
            from-[#858585] to-[#e5e5e5];
   }
@@ -110,17 +117,7 @@ body {
            text-lg md:text-xl;
   }
 
-  /* ----- Definition ----- */
-  #definition {
-    @apply relative w-full min-h-dvh overflow-hidden;
-  }
-
-
-  /* ----- Leber ----- */
-  #leber {
-    @apply relative w-full min-h-dvh overflow-hidden;
-  }
-
+ 
 
   #leber .hero-3d-layout {
     width: 100%;
@@ -128,34 +125,19 @@ body {
     min-height: 500px;
   }
 
-  /* ----- Deutschland ----- */
-  #deutschland {
-    @apply relative w-full min-h-dvh overflow-hidden;
+  #organe .hero-3d-layout {
+    width: 100%;
+    height: 80vh;
+    min-height: 500px;
+  }
+
+  #sectionsieben .hero-3d-layout {
+    width: 100%;
+    height: 80vh;
+    min-height: 500px;
   }
 
 
-    /* ----- Sectionsechs ----- */
-     #sectionsechs {
-    @apply relative w-full min-h-dvh overflow-hidden;
-  }
-
-
-    /* ----- Sectionsieben ----- */
-     #sectionsieben {
-    @apply relative w-full min-h-dvh overflow-hidden;
-  }
-
-    /* ----- Sectionacht ----- */
-     #sectionacht {
-    @apply relative w-full min-h-dvh overflow-hidden;
-  } 
-   
-
-
-      /* ----- Sectionneun ----- */
-     #sectionneun {
-    @apply relative w-full min-h-dvh overflow-hidden;
-  } 
 
 
 

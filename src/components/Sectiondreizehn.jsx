@@ -12,8 +12,8 @@ const Sectiondreizehn = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       // Initial states
-      gsap.set(layout2Ref.current, { opacity: 0, x: -200 });
-      gsap.set(".step", { opacity: 0, y: 30 });
+      gsap.set(layout2Ref.current, { opacity: 0, x: 200 });
+      gsap.set(".step", { opacity: 0, x: 30 });
 
       // Timeline for pinned scroll animation
       const tl = gsap.timeline({
@@ -33,19 +33,19 @@ const Sectiondreizehn = () => {
       tl.to(layout2Ref.current, { opacity: 1, x: 0, duration: 0.6 });
 
       // STEP 1
-      tl.to(".step-1", { opacity: 1, y: 0, duration: 0.5 });
+      tl.to(".step-1", { opacity: 1, x: 0, duration: 0.5 });
 
       // STEP 2 TEXT
-      tl.to(".step-2-text", { opacity: 1, y: 0, duration: 0.5 });
+      tl.to(".step-2-text", { opacity: 1, x: 0, duration: 0.5 });
 
       // STEP 2 IMAGES
-      tl.to(".step-2-images", { opacity: 1, y: 0, duration: 0.5, stagger: 0.2 });
+      tl.to(".step-2-images", { opacity: 1, x: 0, duration: 0.5, stagger: 0.2 });
 
       // STEP 3 TEXT
-      tl.to(".step-3-text", { opacity: 1, y: 0, duration: 0.5 });
+      tl.to(".step-3-text", { opacity: 1, x: 0, duration: 0.5 });
 
       // STEP 3 IMAGE
-      tl.to(".step-3-image", { opacity: 1, y: 0, duration: 0.5 });
+      tl.to(".step-3-image", { opacity: 1, x: 0, duration: 0.5 });
 
     }, containerRef);
 
@@ -54,7 +54,7 @@ const Sectiondreizehn = () => {
 
   return (
     <section
-      id="sectionneun"
+      id="sectiondreizehn"
       ref={containerRef}
       className="relative h-screen overflow-hidden"
     >

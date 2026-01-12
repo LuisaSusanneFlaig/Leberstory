@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,9 +21,16 @@ const Sectionzwoelf = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial positions
-      gsap.set(initialRef.current, { opacity: 1, x: 0 });
-      gsap.set(remainingRef.current, { opacity: 0, x: 100 });
+      // Initial states
+      gsap.set(initialRef.current, {
+        autoAlpha: 1,
+        x: 0,
+      });
+
+      gsap.set(remainingRef.current, {
+        autoAlpha: 0,
+        x: 200,
+      });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -35,11 +42,27 @@ const Sectionzwoelf = () => {
         },
       });
 
-      // Animate initial content out
-      tl.to(initialRef.current, { opacity: 0, x: -200, duration: 1 });
+      // Animate first panel out
+      tl.to(initialRef.current, {
+        autoAlpha: 0,
+        x: -200,
+        duration: 1,
+        ease: "none",
+      });
 
-      // Animate remaining content in
-      tl.to(remainingRef.current, { opacity: 1, x: 0, duration: 1 }, "<");
+      // Hard switch visibility (prevents blending)
+      tl.set(remainingRef.current, { autoAlpha: 1 });
+
+      // Animate second panel in
+      tl.to(
+        remainingRef.current,
+        {
+          x: 0,
+          duration: 1,
+          ease: "none",
+        },
+        "<"
+      );
     }, containerRef);
 
     return () => ctx.revert();
@@ -51,73 +74,78 @@ const Sectionzwoelf = () => {
       ref={containerRef}
       className="relative h-screen overflow-hidden"
     >
-      {/* Initial content */}
-<div
-  ref={initialRef}
-  className="absolute inset-0 flex justify-center pt-50"
->
-  <div className="grid grid-cols-2 m-20">
-    <div>
-      <h2>Palliative Behandlung für Leberkrebs</h2>
-    </div>
+      {/* PANEL 1 */}
+      <div
+        ref={initialRef}
+        className="absolute inset-0 flex justify-center pt-50"
+      >
+        <div className="grid grid-cols-2 m-20 gap-12">
+          <div>
+            <h2>Palliative Behandlung für Leberkrebs</h2>
+          </div>
 
-    <div className="flex flex-col">
-      <p>
-        Wenn keine Aussicht auf Heilung besteht, kann eine palliative
-        Therapie das Wachstum des Tumors verlangsamen und die Symptome
-        lindern.
-      </p>
+          <div className="flex flex-col">
+            <p>
+              Wenn keine Aussicht auf Heilung besteht, kann eine palliative
+              Therapie das Wachstum des Tumors verlangsamen und die Symptome
+              lindern.
+            </p>
 
-      {/* SVG GRID */}
-      <div className="grid grid-cols-3 gap-6 mt-6">
-        {svgs.slice(0, 3).map((item, idx) => (
-          <div key={idx} className="flex flex-col items-center text-center">
-            {/* ICON SLOT */}
-            <div className="h-32 w-full flex items-center justify-center">
-              <img
-                src={item.src}
-                alt={item.text}
-                className="max-h-full max-w-full object-contain"
-              />
+            <div className="grid grid-cols-3 gap-6 mt-6">
+              {svgs.slice(0, 3).map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div className="h-32 w-full flex items-center justify-center">
+                    <img
+                      src={item.src}
+                      alt={item.text}
+                      className="max-h-full max-w-full object-contain"
+                    />
+                  </div>
+                  <p className="mt-2">{item.text}</p>
+                </div>
+              ))}
             </div>
-            {/* TEXT */}
-            <p className="mt-2">{item.text}</p>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-</div>
-
-{/* Remaining content */}
-<div
-  ref={remainingRef}
-  className="absolute inset-0 flex flex-col pt-50"
->
-  <div className="flex flex-row m-20">
-    <div className="w-1/2 flex flex-col gap-4">
-      <p>Spezielle Chemotherapien verlangsamen das Tumorwachstum.</p>
-      <p>Schmerzmittel und kalorienreiches Essen reduzieren die Symptome.</p>
-    </div>
-
-    {/* SVG GRID */}
-    <div className="w-1/2 grid grid-cols-3 gap-6">
-      {svgs.slice(3, 6).map((item, idx) => (
-        <div key={idx + 3} className="flex flex-col items-center text-center">
-          <div className="h-32 w-full flex items-center justify-center">
-            <img
-              src={item.src}
-              alt={item.text}
-              className="max-h-full max-w-full object-contain"
-            />
-          </div>
-          <p className="mt-2">{item.text}</p>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
+      </div>
 
+      {/* PANEL 2 */}
+      <div
+        ref={remainingRef}
+        className="absolute inset-0 flex justify-center pt-50"
+      >
+        <div className="flex flex-row m-20 gap-12 w-full">
+          <div className="w-1/2 flex flex-col gap-4">
+            <p>
+              Spezielle Chemotherapien verlangsamen das Tumorwachstum.
+            </p>
+            <p>
+              Schmerzmittel und kalorienreiches Essen reduzieren die Symptome.
+            </p>
+          </div>
+
+          <div className="w-1/2 grid grid-cols-3 gap-6">
+            {svgs.slice(3, 6).map((item, idx) => (
+              <div
+                key={idx + 3}
+                className="flex flex-col items-center text-center"
+              >
+                <div className="h-32 w-full flex items-center justify-center">
+                  <img
+                    src={item.src}
+                    alt={item.text}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+                <p className="mt-2">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
