@@ -12,8 +12,8 @@
 html,
 body {
   width: 100%;
-  background-color: #e5e5e5;
-  color: #0d0d0d;
+  background-color: #0d243a;
+  color: #e2edf8;
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
@@ -60,17 +60,17 @@ body {
   }
 
   nav p {
-    @apply text-3xl -mb-2;
+    @apply text-sm -mb-2 lg:text-3xl;
   }
 
   nav a {
-    @apply cursor-pointer text-3xl text-nowrap;
+    @apply cursor-pointer text-nowrap text-sm -mb-2 lg:text-3xl;
     transition: color 0.3s ease;
-    color: #bbb;
+    color: #e2edf8;
   }
 
   nav a.active {
-    color: #fff;
+    color: #83b3e3;
   }
 
   nav ul {
@@ -78,11 +78,11 @@ body {
   }
 
   h2 {
-    @apply md:flex-1 text-6xl font-medium;
+    @apply md:flex-1 lg:text-7xl font-medium text-4xl leading-relaxed;
   }
 
   p {
-    @apply md:flex-1 text-4xl font-medium;
+    @apply md:flex-1 text-lg leading-normal font-medium lg:text-5xl;
   }
 
   li {
@@ -96,8 +96,7 @@ body {
   /* ----- Hero ----- */
   #hero {
     @apply w-full min-h-dvh
-           bg-linear-to-b
-           from-[#858585] to-[#e5e5e5];
+
   }
 
   #hero h1 {

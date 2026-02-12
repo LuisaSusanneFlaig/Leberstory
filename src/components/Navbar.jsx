@@ -64,7 +64,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className='bg-[#858585]'>
+    <nav>
       <div>
         <ul className='flex gap-4'>
           {navLinks.map((link) => (

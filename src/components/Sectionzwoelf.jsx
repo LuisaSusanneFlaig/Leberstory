@@ -1,6 +1,9 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Line from '/src/images/Line.svg'; 
+import ScrollSection from './Layout/ScrollSection.jsx';
+import SplitPanel from "./Layout/SplitPanel.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,27 +72,34 @@ const Sectionzwoelf = () => {
   }, []);
 
   return (
-    <section
+    <ScrollSection
       id="sectionzwoelf"
       ref={containerRef}
-      className="relative h-screen overflow-hidden"
     >
       {/* PANEL 1 */}
-      <div
+      <SplitPanel
         ref={initialRef}
-        className="absolute inset-0 flex justify-center pt-50"
-      >
-        <div className="grid grid-cols-2 m-20 gap-12">
-          <div>
-            <h2>Palliative Behandlung für Leberkrebs</h2>
-          </div>
+        left={
 
-          <div className="flex flex-col">
+
+
+           <h2>Palliative Behandlung für Leberkrebs
+                                                       <img 
+                                            src={Line} 
+                                            alt="Decorative line" 
+                                            className="mt-4 mb-6"
+                                            />
+            </h2>
+        }
+
+        right={
+          <>
             <p>
               Wenn keine Aussicht auf Heilung besteht, kann eine palliative
               Therapie das Wachstum des Tumors verlangsamen und die Symptome
               lindern.
             </p>
+      
 
             <div className="grid grid-cols-3 gap-6 mt-6">
               {svgs.slice(0, 3).map((item, idx) => (
@@ -108,24 +118,20 @@ const Sectionzwoelf = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </div>
+            </>
+        }
+      />  
 
       {/* PANEL 2 */}
-      <div
+      <SplitPanel
         ref={remainingRef}
-        className="absolute inset-0 flex justify-center pt-50"
-      >
-        <div className="flex flex-row m-20 gap-12 w-full">
-          <div className="w-1/2 flex flex-col gap-4">
+        left={
             <p>
               Spezielle Chemotherapien verlangsamen das Tumorwachstum.
-            </p>
-            <p>
               Schmerzmittel und kalorienreiches Essen reduzieren die Symptome.
             </p>
-          </div>
+          }
+        right={
 
           <div className="w-1/2 grid grid-cols-3 gap-6">
             {svgs.slice(3, 6).map((item, idx) => (
@@ -144,9 +150,9 @@ const Sectionzwoelf = () => {
               </div>
             ))}
           </div>
-        </div>
-      </div>
-    </section>
+        }
+      />
+    </ScrollSection>
   );
 };
 

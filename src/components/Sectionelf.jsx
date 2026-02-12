@@ -1,6 +1,10 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Line from '/src/images/Line.svg'; 
+import ScrollSection from './Layout/ScrollSection.jsx';
+import SplitPanel from "./Layout/SplitPanel.jsx";
+import CenterPanel from './Layout/CenterPanel.jsx'; 
 
 const Sectionelf = () => {
    const containerRef = useRef(null);
@@ -46,54 +50,59 @@ const Sectionelf = () => {
   }, []);
 
   return (
-    <section
+    <ScrollSection
       id="sectionelf"
       ref={containerRef}
-      className="relative h-screen overflow-hidden"
     >
       {/* Layout 1 */}
-      <div
+      <SplitPanel
         ref={layout1Ref}
-        className="absolute inset-0  w-full flex pt-20"
-      >
-        <div className="flex flex-col m-20">
-        <h2>Heilende Behandlung für Leberkrebs</h2>
-        </div>
-        <div className="flex flex-col m-20">
+        left={
+          <>
+        <h2>Heilende Behandlung für Leberkrebs
+        <img 
+          src={Line} 
+          alt="Decorative line" 
+          className="mt-4 mb-6"
+          />
+        </h2>
+        </>
+        }
+        right={
+        <>
         <p>Bei chirurgischen Eingriffen werden Teile der Leber, die Tumore enthalten, entfernt.</p>
-        <img src="/src/images/Curative2.png" alt="Layout 1"  className="w-3/4"/>
-        </div>
-      </div>
+        <img src="/src/images/Curative2.png" />   
+        </> 
+         }
+      />
 
       {/* Layout 2 */}
-      <div
+      <SplitPanel
         ref={layout2Ref}
-        className="absolute inset-0 w-full flex pt-50"
-      >
-          <div className=" w-1/3flex flex-col m-20">
-        <p>Tumore können auch mit einer Ablation behandelt werden.</p>
-        <p>Dabei wird eine Nadel in den Tumor eingeführt, durch die Hitze oder Mikrowellen geleitet werden, um den Tumor zu zerstören.</p>
-        </div>
-        <div className=" w-2/3 flex flex-col m-20">
-        <img src="/src/images/Curative3.png" alt="Layout 3" className="max-w" />
-        </div>
-      </div>
+        left={
+
+        <p>Tumore können auch mit einer Ablation behandelt werden.
+        Dabei wird eine Nadel in den Tumor eingeführt, durch die Hitze oder Mikrowellen geleitet werden, um den Tumor zu zerstören.</p>
+        }
+        right={
+        <img src="/src/images/Curative3.png" />
+        }
+      />
 
       {/* Layout 3 */}
-      <div
+      <SplitPanel
         ref={layout3Ref}
-        className="absolute inset-0 w-full flex pt-50"
-      >
-        <div className=" w-1/3flex flex-col m-20">
-        <p>Darüber hinaus können winzige, mit radioaktivem Material gefüllte Kügelchen in die Lebergefäße eingebracht werden.</p>
-        <p>Der Tumor wird lokal von innen bestrahlt, was zum Absterben der Tumorzellen führt.</p>
-        </div>
-        <div className=" w-2/3 flex flex-col m-20">
-        <img src="/src/images/Curative4.png" alt="Layout 3" className="max-w" />
-        </div>
-      </div>
+        left={
+        <p>Darüber hinaus können winzige, mit radioaktivem Material gefüllte Kügelchen in die Lebergefäße eingebracht werden.
+        Der Tumor wird lokal von innen bestrahlt, was zum Absterben der Tumorzellen führt.</p>
+        }
+        right={
 
-    </section>
+        <img src="/src/images/Curative4.png" />
+          } 
+      />
+
+    </ScrollSection>
   );
 }   
 export default Sectionelf;

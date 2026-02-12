@@ -1,6 +1,9 @@
 import React, { useLayoutEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import ScrollSection from './Layout/ScrollSection.jsx';
+import SplitPanel from "./Layout/SplitPanel.jsx";
+import Line from '/src/images/Line.svg'; 
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +36,7 @@ const Sectionacht = () => {
       gsap.set(svgRefs.current, { opacity: 0, x: 120 });
       gsap.set(introRef.current, { x: 0 });
 
+
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -44,10 +48,11 @@ const Sectionacht = () => {
       });
 
       // 1️⃣ Slide intro content out to the left
-      tl.to(introRef.current, {
-        xPercent: -100,
+
+        tl.to([introRef.current], {
+        x: -100,
+        opacity: 0,
         duration: 1,
-        ease: "power2.inOut",
       });
 
       // 2️⃣ Animate SVG cards in from the right
@@ -68,30 +73,33 @@ const Sectionacht = () => {
   }, []);
 
   return (
-    <section
+    <ScrollSection
       ref={sectionRef}
       id="sectionacht"
-      className="relative h-screen overflow-hidden"
     >
       {/* INTRO CONTENT */}
-      <div
-        ref={introRef}
-        className="absolute inset-0 flex justify-center pt-20"
-      >
-        <h2 className="w-1/2 m-20">
-          Wie macht sich Leberkrebs bemerkbar?
-        </h2>
-        <div className="w-1/2 m-20">
-          <p>
-            Da die Leber nicht schmerzempfindlich ist, verursacht Leberkrebs
-            in der Regel zunächst keine Symptome.
-          </p>
-          <p>
-            Im fortgeschrittenen Stadium äußert sich Leberkrebs auf
-            verschiedene Weise.
-          </p>
-        </div>
-      </div>
+<SplitPanel
+  ref={introRef}
+  left={
+    <h2>Wie macht sich Leberkrebs bemerkbar?
+                      <img 
+                      src={Line} 
+                      alt="Decorative line" 
+                      className="mt-4 mb-6"
+                      />
+    </h2>
+  }
+  right={
+
+      <p>
+        Da die Leber nicht schmerzempfindlich ist, verursacht Leberkrebs
+        in der Regel zunächst keine Symptome.
+        Im fortgeschrittenen Stadium äußert sich Leberkrebs auf
+        verschiedene Weise.
+      </p>
+
+  }
+/>
 
       {/* SVG GRID */}
       <div className="absolute inset-0 flex items-center justify-center p-20">
@@ -138,7 +146,7 @@ const Sectionacht = () => {
           </div>
         </div>
       </div>
-    </section>
+    </ScrollSection>
   );
 };
 

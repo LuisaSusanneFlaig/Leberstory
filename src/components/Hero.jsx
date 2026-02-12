@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import React from 'react';
 import { SplitText } from 'gsap/all';
+import Line from '/src/images/Line.svg'; 
 
 
 const Hero = () => {
@@ -54,6 +55,11 @@ const Hero = () => {
             <section id="hero">
                 <div className="flex flex-col items-center">
                     <h1 className='title pt-20'>Leberkrebs</h1>
+                            <img 
+                                src={Line} 
+                                alt="Decorative line" 
+                                className="mt-4 mb-6"
+                            />
                     <h3 className='subtitle mt-10'>Eine interaktive Geschichte</h3>
                     <p className='subtitle'>von LUISA FLAIG</p>
                     <p className='subtitle scroll-indicator pt-50 cursor-pointer'

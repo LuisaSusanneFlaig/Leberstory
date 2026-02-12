@@ -1,6 +1,10 @@
 import React, { useLayoutEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Line from '/src/images/Line.svg';
+import ScrollSection from './Layout/ScrollSection.jsx';
+import SplitPanel from "./Layout/SplitPanel.jsx";
+import CenterPanel from './Layout/CenterPanel.jsx';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,31 +69,38 @@ const Sectionvierzehn = () => {
   }, []);
 
   return (
-    <section
+    <ScrollSection
       ref={sectionRef}
       id="sectionvierzehn"
-      className="relative h-screen overflow-hidden"
     >
-      {/* INTRO CONTENT */}
-      <div ref={introRef} className="absolute grid grid-cols-2 pt-50">
-      <div className="flex flex-col m-20">
+
+      <SplitPanel ref={introRef} 
+        left={
         <h2>
           Wie kann ich Leberkrebs vorbeugen?
+                                                                             <img 
+                                                                  src={Line} 
+                                                                  alt="Decorative line" 
+                                                                  className="mt-4 mb-6"
+                                                                  />
         </h2>
-        </div>
-        <div className="flex flex-col m-20">
-          <p>Einige Risikofaktoren für Leberkrebs sind vermeidbar:</p>
+        }
+        right={
+            <>
+          <p>Einige Risikofaktoren für Leberkrebs sind vermeidbar:
           <ul className="list-disc m-10">
             <li>Hepatitis B</li>
             <li>Alkoholkonsum</li>
             <li>Übergewicht</li>
             <li>Rauchen</li>
           </ul>
-        </div>
-      </div>
+          </p>
+        </>
+        }
+      />
 
-      {/* SVG GRID */}
-      <div className="absolute inset-0 flex items-center justify-center p-20">
+      
+      <CenterPanel>
         <div className="grid grid-cols-2 gap-8">
           {svgs.map((item, idx) => (
             <div
@@ -104,8 +115,8 @@ const Sectionvierzehn = () => {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </CenterPanel>
+    </ScrollSection>
   );
 };
 
