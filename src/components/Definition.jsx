@@ -1,12 +1,14 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { useTranslation } from "react-i18next";
+import { useStory } from "../StoryContext";
 
-import ScrollSection from './Layout/ScrollSection.jsx';
-import SplitPanel from './Layout/SplitPanel.jsx';
-import CenterPanel from './Layout/CenterPanel.jsx';
-import Line from '/src/images/Line.svg'; 
-
+import ScrollSection from "./Layout/ScrollSection.jsx";
+import SplitPanel from "./Layout/SplitPanel.jsx";
+import CenterPanel from "./Layout/CenterPanel.jsx";
+import Line from "/src/images/Line.svg";
+import { ThemedImg } from "./ThemedImg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +16,9 @@ const Definition = () => {
   const triggerRef = useRef(null);
   const panel1Ref = useRef(null);
   const imageRef = useRef(null);
+
+  const { t } = useTranslation();
+  const { i18nContext } = useStory();
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
@@ -27,58 +32,45 @@ const Definition = () => {
         },
       });
 
-      // Text raus
       tl.to([panel1Ref.current], {
         opacity: 0,
-        x: (i) => (i === 0 ? -100 : -100),
+        x: -100,
         duration: 1,
       });
 
-      // Bild rein (horizontal)
       tl.fromTo(
         imageRef.current,
         { x: "100%", opacity: 0 },
-        { x: "0%", opacity: 1, duration: 1 },
-       
+        { x: "0%", opacity: 1, duration: 1 }
       );
-    }, triggerRef);
+    }, triggerRef.current);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <ScrollSection
-      id="definition"
-      ref={triggerRef}
-    >
-{/* PANEL 1 – TEXT */}
+    <ScrollSection id="definition" ref={triggerRef}>
+      {/* PANEL 1 – TEXT */}
       <SplitPanel
         ref={panel1Ref}
-        left={  
+        left={
           <h2>
-            Wie findet man zurück ins Leben?
-                     <img 
-          src={Line} 
-          alt="Decorative line" 
-          className="mt-4 mb-6"
-          />
+            {t("definition.h2", { context: i18nContext })}
+            <img
+              src={Line}
+              alt={t("definition.lineAlt", { context: i18nContext })}
+              className="mt-4 mb-6"
+            />
           </h2>
-        
-
         }
-        right={
-          <p>
-            Thomas ist ein 52-jähriger Mann, bei dem bei einer
-            Routineuntersuchung Leberkrebs diagnostiziert wurde...
-          </p>
-        }
+        right={<p>{t("definition.p", { context: i18nContext })}</p>}
       />
 
       {/* PANEL 2 – IMAGE */}
       <CenterPanel ref={imageRef}>
-        <img
-          src="/src/images/Thomas_ill.png"
-          alt="Thomas"
+        <ThemedImg
+          name="Thomas_ill.png"
+          alt={t("definition.thomasAlt", { context: i18nContext })}
         />
       </CenterPanel>
     </ScrollSection>

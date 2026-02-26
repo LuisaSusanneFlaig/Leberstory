@@ -4,7 +4,10 @@
 /* ================================
    THEME
 ================================ */
-
+:root {
+  --bg-color: #0d243a; /* default blue bg */
+  --text-color: #e2edf8; /* default blue text */
+}
 
 /* ================================
    BASE STYLES
@@ -12,13 +15,12 @@
 html,
 body {
   width: 100%;
-  background-color: #0d243a;
-  color: #e2edf8;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
-  font-family: 'Inter', sans-serif;
-  line-height: 48px;
+  line-height: 1.4; /* FIXED */
 }
 
 /* ================================
@@ -32,9 +34,12 @@ body {
   @apply flex flex-col items-center justify-center;
 }
 
-@utility abs-center {
-  @apply absolute top-1/2 left-1/2
-         -translate-x-1/2 -translate-y-1/2;
+@utility text-primary {
+  color: var(--primary-color);
+}
+
+@utility bg-primary {
+  background-color: var(--primary-color);
 }
 
 /* ================================
@@ -43,40 +48,172 @@ body {
 @layer components {
   /* ----- Layout ----- */
   main {
-    @apply w-full overflow-x-hidden;
-  }
+  @apply w-full overflow-x-hidden;
+  padding-top: 100px;
+}
 
   /* ----- Navigation ----- */
-  nav {
-    @apply fixed z-50 w-full;
-    
-  }
+ /* ----- Navigation ----- */
 
-  nav > div {
-    @apply mx-auto max-w-7xl px-5 py-5
-           flex flex-col gap-5
-           md:flex-row md:justify-between
-           items-center;
-  }
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: var(--bg-color);
+  padding-top: 0;
+}
 
-  nav p {
-    @apply text-sm -mb-2 lg:text-3xl;
-  }
+/* Thin white strip */
+nav::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: var(--text-color);
+}
 
-  nav a {
-    @apply cursor-pointer text-nowrap text-sm -mb-2 lg:text-3xl;
-    transition: color 0.3s ease;
-    color: #e2edf8;
-  }
+/* Top bar container (hosts the white strip + language) */
+.nav-top-bar {
+  position: relative;
+  height: 26px;
+}
 
-  nav a.active {
-    color: #83b3e3;
-  }
+/* Main navigation row */
+/* ----- Navigation ----- */
 
-  nav ul {
-    @apply flex-center gap-7 lg:gap-12;
-  }
+/* ===== NAVBAR (Figma accurate) ===== */
 
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  background-color: var(--bg-color);
+  padding-top: 0;
+}
+
+/* 1px thin line ABOVE the white bar (Figma) */
+nav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.35); /* tweak if needed */
+}
+
+/* White strip (1440 x 18 in Figma) */
+nav::before {
+  content: "";
+  position: absolute;
+  top:9px;              /* sits just under the hairline */
+  left: 0;
+  width: 100%;
+  height: 18px;
+  background-color: var(--text-color);
+}
+
+/* hosts the lang switch on the strip */
+.nav-top-bar {
+  position: relative;
+  height: 19px;          /* 1px hairline + 18px strip */
+}
+
+/* spacing from strip to menu row (Figma ~21/22) */
+.nav-content {
+  width: 100%;
+  padding-top: 22px;
+  padding-bottom: 12px;
+}
+
+/* IMPORTANT: strong selector so it beats old nav ul rules */
+nav .nav-content > ul {
+  width: 1043px;
+  height: 29px;
+
+  /* Figma margins on a 1440 canvas */
+  margin: 0 214px 0 183px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0;
+  list-style: none;
+}
+
+/* IMPORTANT: remove flex-grow behavior from old li rules */
+nav .nav-content > ul > li {
+  flex: none !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* Figma text */
+nav .nav-content a {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29px;
+  color: #e2edf8;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+nav .nav-content a.active {
+  color: #83b3e3;
+}
+
+/* Language switch inside the strip */
+.lang-switch {
+  position: absolute;
+  top: 9px;          /* SAME as strip */
+  right: 30px;
+  height: 18px;      /* SAME as strip height */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--bg-color);
+  z-index: 3;
+}
+
+.lang-switch button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.lang-active {
+  font-weight: 600;
+}
+
+/* Responsive safety */
+@media (max-width: 1440px) {
+  nav .nav-content > ul {
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    height: auto;
+  }
+}
+
+  /* ----- Typography ----- */
   h2 {
     @apply md:flex-1 lg:text-7xl font-medium text-4xl leading-relaxed;
   }
@@ -135,10 +272,6 @@ body {
     height: 80vh;
     min-height: 500px;
   }
-
-
-
-
 
 }
 

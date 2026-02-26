@@ -1,27 +1,27 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import Line from '/src/images/Line.svg'; 
-import ScrollSection from './Layout/ScrollSection.jsx';
+import Line from "/src/images/Line.svg";
+import ScrollSection from "./Layout/ScrollSection.jsx";
 import SplitPanel from "./Layout/SplitPanel.jsx";
+import { useTranslation } from "react-i18next";
+import { useStory } from "../StoryContext";
+import { ThemedImg } from "./ThemedImg"; // adjust path if needed
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Sectionzehn = () => {
+  const { t } = useTranslation();
+  const { i18nContext } = useStory();
 
-  
   const containerRef = useRef(null);
-
-  // Individual refs for each layout
   const layout1Ref = useRef(null);
   const layout2Ref = useRef(null);
   const layout3Ref = useRef(null);
 
-
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Set initial opacity for all layouts except the first
-      gsap.set([layout2Ref.current, layout3Ref.current ], { opacity: 0 });
+      gsap.set([layout2Ref.current, layout3Ref.current], { opacity: 0 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -33,87 +33,81 @@ const Sectionzehn = () => {
         },
       });
 
-      // Layout 1 scrolls out to the left
       tl.to(layout1Ref.current, { x: -200, opacity: 0, duration: 1 });
 
-      // Layout 2 slides in from the left
-      tl.fromTo(layout2Ref.current, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
+      tl.fromTo(
+        layout2Ref.current,
+        { x: 200, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1 }
+      );
 
-      // Layout 2 scrolls out to the left
       tl.to(layout2Ref.current, { x: -200, opacity: 0, duration: 1 });
 
-      // Layout 3 slides in from the left
-      tl.fromTo(layout3Ref.current, { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 1 });
-
-
-
-    }, containerRef);
+      tl.fromTo(
+        layout3Ref.current,
+        { x: 200, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1 }
+      );
+    }, containerRef.current);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <ScrollSection
-      id="sectionzehn"
-      ref={containerRef}
-    >
+    <ScrollSection id="sectionzehn" ref={containerRef}>
       {/* Layout 1 */}
       <SplitPanel
         ref={layout1Ref}
         left={
-          <>
-        <h2>Wie wird Leberkrebs behandelt?
-          <img 
-            src={Line} 
-            alt="Decorative line" 
-            className="mt-4 mb-6"
+          <h2>
+            {t("sectionzehn.title", { context: i18nContext })}
+            <img
+              src={Line}
+              alt={t("sectionzehn.lineAlt", { context: i18nContext })}
+              className="mt-4 mb-6"
             />
-        </h2>
-        </>
+          </h2>
         }
         right={
           <>
-        <p>Die Behandlungsplanung hängt davon ab, wie weit die Krankheit  fortgeschritten ist und in welchem Zustand sich die Leber befindet.</p>
-        <img src="/src/images/Behandlung.png"  />
-        </>
+            <p>{t("sectionzehn.layout1.p", { context: i18nContext })}</p>
+
+            <ThemedImg
+              name="Behandlung.png"
+              alt="Behandlung"
+              className="max-w-full h-auto"
+            />
+          </>
         }
       />
 
       {/* Layout 2 */}
       <SplitPanel
         ref={layout2Ref}
-
         left={
-          <>
-        <p> Außerdem spielen das Alter und der allgemeine Gesundheitszustand der Patienten eine wichtige Rolle.
-        Abhängig davon gibt es heilende und palliative Behandlungen.</p>
-        </>
+          <p>{t("sectionzehn.layout2.leftP", { context: i18nContext })}</p>
         }
         right={
-          <>
-                  <p>Der Grad der Veränderung lässt sich nur durch eine mikroskopische Untersuchung der Krebszellen feststellen.
-        Bei einer Biopsie wird eine kleine Probe des Lebergewebes entnommen und unter dem Mikroskop untersucht.</p>
-       </> }
+          <p>{t("sectionzehn.layout2.rightP", { context: i18nContext })}</p>
+        }
       />
-
 
       {/* Layout 3 */}
       <SplitPanel
         ref={layout3Ref}
         left={
- 
-        <p>Für die Therapieplanung ist es wichtig, das Ausmaß der Veränderung der Zellen zu verstehen.
-      Der Schweregrad eines Tumors hängt davon ab, wie stark sich die Zellen bereits bösartig verändert haben.</p>
+          <p>{t("sectionzehn.layout3.p", { context: i18nContext })}</p>
         }
         right={
-
-        <img src="/src/images/Biopsie.png"/>
-
-          }
+          <ThemedImg
+            name="Biopsie.png"
+            alt="Biopsie"
+            className="max-w-full h-auto"
           />
-
+        }
+      />
     </ScrollSection>
   );
 };
-export default Sectionzehn;
 
+export default Sectionzehn;

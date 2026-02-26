@@ -1,21 +1,27 @@
 import React, { useLayoutEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import Line from '/src/images/Line.svg';
-import ScrollSection from './Layout/ScrollSection.jsx';
+import Line from "/src/images/Line.svg";
+import ScrollSection from "./Layout/ScrollSection.jsx";
 import SplitPanel from "./Layout/SplitPanel.jsx";
-import CenterPanel from './Layout/CenterPanel.jsx';
+import CenterPanel from "./Layout/CenterPanel.jsx";
+import { useTranslation } from "react-i18next";
+import { useStory } from "../StoryContext";
+import { ThemedImg } from "./ThemedImg";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const svgs = [
-  { src: "/src/images/Prevention.png", text: "Impfung gegen Hepatitis" },
-  { src: "/src/images/Alcohol.png", text: "Alkoholkonsum einschränken" },
-  { src: "/src/images/Wheight.png", text: "Gewicht in einem gesunden Bereich halten" },
-  { src: "/src/images/Smoking.png", text: "Aufhören zu rauchen" },
+const icons = [
+  { name: "Prevention.png", textKey: "sectionvierzehn.cards.0" },
+  { name: "Alcohol.png", textKey: "sectionvierzehn.cards.1" },
+  { name: "Wheight.png", textKey: "sectionvierzehn.cards.2" },
+  { name: "Smoking.png", textKey: "sectionvierzehn.cards.3" },
 ];
 
 const Sectionvierzehn = () => {
+  const { t } = useTranslation();
+  const { i18nContext } = useStory();
+
   const sectionRef = useRef(null);
   const introRef = useRef(null);
   const svgRefs = useRef([]);
@@ -29,7 +35,6 @@ const Sectionvierzehn = () => {
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial states
       gsap.set(introRef.current, { x: 0, opacity: 1 });
       gsap.set(svgRefs.current, { x: 120, opacity: 0 });
 
@@ -43,7 +48,6 @@ const Sectionvierzehn = () => {
         },
       });
 
-      // 1️⃣ Slide intro content out to the left
       tl.to(introRef.current, {
         xPercent: -100,
         opacity: 0,
@@ -51,7 +55,6 @@ const Sectionvierzehn = () => {
         ease: "power2.inOut",
       });
 
-      // 2️⃣ Animate SVGs in from the right
       tl.to(
         svgRefs.current,
         {
@@ -63,55 +66,57 @@ const Sectionvierzehn = () => {
         },
         "-=0.3"
       );
-    }, sectionRef);
+    }, sectionRef.current);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <ScrollSection
-      ref={sectionRef}
-      id="sectionvierzehn"
-    >
-
-      <SplitPanel ref={introRef} 
+    <ScrollSection ref={sectionRef} id="sectionvierzehn">
+      <SplitPanel
+        ref={introRef}
         left={
-        <h2>
-          Wie kann ich Leberkrebs vorbeugen?
-                                                                             <img 
-                                                                  src={Line} 
-                                                                  alt="Decorative line" 
-                                                                  className="mt-4 mb-6"
-                                                                  />
-        </h2>
+          <h2>
+            {t("sectionvierzehn.title", { context: i18nContext })}
+            <img
+              src={Line}
+              alt={t("sectionvierzehn.lineAlt", { context: i18nContext })}
+              className="mt-4 mb-6"
+            />
+          </h2>
         }
         right={
-            <>
-          <p>Einige Risikofaktoren für Leberkrebs sind vermeidbar:
-          <ul className="list-disc m-10">
-            <li>Hepatitis B</li>
-            <li>Alkoholkonsum</li>
-            <li>Übergewicht</li>
-            <li>Rauchen</li>
-          </ul>
-          </p>
-        </>
+          <>
+            <p>{t("sectionvierzehn.intro", { context: i18nContext })}</p>
+            <ul className="list-disc m-10">
+              <li>{t("sectionvierzehn.risks.0", { context: i18nContext })}</li>
+              <li>{t("sectionvierzehn.risks.1", { context: i18nContext })}</li>
+              <li>{t("sectionvierzehn.risks.2", { context: i18nContext })}</li>
+              <li>{t("sectionvierzehn.risks.3", { context: i18nContext })}</li>
+            </ul>
+          </>
         }
       />
 
-      
       <CenterPanel>
         <div className="grid grid-cols-2 gap-8">
-          {svgs.map((item, idx) => (
+          {icons.map((item, idx) => (
             <div
               key={idx}
               ref={addToRefs}
               className="flex flex-col items-center text-center"
             >
               <div className="h-32 w-full flex items-center justify-center">
-                <img src={item.src} alt={item.text} className="max-h-full max-w-full object-contain" />
+                <ThemedImg
+                  name={item.name}
+                  alt={t(item.textKey, { context: i18nContext })}
+                  className="max-h-full max-w-full object-contain"
+                />
               </div>
-              <p className="mt-4">{item.text}</p>
+
+              <p className="mt-4">
+                {t(item.textKey, { context: i18nContext })}
+              </p>
             </div>
           ))}
         </div>

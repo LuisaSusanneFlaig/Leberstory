@@ -1,0 +1,163 @@
+{
+    "nav": {
+        "definition": "Definition",
+        "anatomie": "Anatomie",
+        "symptome": "Symptome",
+        "diagnose": "Diagnose",
+        "behandlung": "Behandlung",
+        "prognose": "Prognose",
+        "prävention": "Prävention"
+    },
+    "hero": {
+        "title": "Leberkrebs",
+        "title_positive": "Leberkrebs",
+        "title_disturbing": "Leberkrebs",
+        "subtitle": "Eine interaktive Geschichte",
+        "subtitle_positive": "Eine Geschichte von Stärke und Hoffnung",
+        "subtitle_disturbing": "Eine Geschichte, die alles verändert",
+        "byline": "von LUISA FLAIG",
+        "byline_positive": "von LUISA FLAIG",
+        "byline_disturbing": "von LUISA FLAIG",
+        "scroll": "zum Beginnen Scrollen",
+        "scroll_positive": "Reise beginnen",
+        "scroll_disturbing": "Der Realität begegnen",
+        "lineAlt": "Dekorative Linie",
+        "lineAlt_positive": "Dekorative Linie",
+        "lineAlt_disturbing": "Dekorative Linie",
+        "themeIconAlt": "{{theme}} Theme-Icon",
+        "themeIconAlt_positive": "{{theme}} Theme-Icon",
+        "themeIconAlt_disturbing": "{{theme}} Theme-Icon"
+    },
+    "definition": {
+        "h2": "Wie findet man zurück ins Leben?",
+        "h2_positive": "Eine Diagnose ist nicht das Ende.",
+        "h2_disturbing": "Wie zerbrechlich das Leben sein kann.",
+        "p": "Thomas ist ein 52-jähriger Mann, bei dem bei einer Routineuntersuchung Leberkrebs diagnostiziert wurde...",
+        "p_positive": "Thomas ist 52 Jahre alt. Bei einer Routineuntersuchung wurden erhöhte Leberwerte festgestellt. Weitere Untersuchungen bestätigen Leberkrebs – jedoch ohne Metastasen. Es gibt Hoffnung. Es gibt Möglichkeiten.",
+        "p_disturbing": "Thomas ist 52 Jahre alt. Eine Routineuntersuchung zeigt mehrere Tumore in seiner Leber. Sein Leben verändert sich in einem einzigen Moment.",
+        "lineAlt": "Dekorative Linie",
+        "lineAlt_positive": "Dekorative Linie",
+        "lineAlt_disturbing": "Dekorative Linie",
+        "thomasAlt": "Thomas",
+        "thomasAlt_positive": "Thomas",
+        "thomasAlt_disturbing": "Thomas"
+    },
+    "deutschland": {
+        "p1_left": "In Deutschland werden jährlich etwa 8.790 neue Fälle von Leberkrebs diagnostiziert.",
+        "p1_left_positive": "In Deutschland werden jährlich etwa 8.790 neue Fälle von Leberkrebs diagnostiziert.",
+        "p1_left_disturbing": "In Deutschland werden jährlich etwa 8.790 neue Fälle von Leberkrebs diagnostiziert.",
+        "p1_right": "In den letzten 35 Jahren hat sich die Zahl der Neuerkrankungen verdoppelt – ein klarer Handlungsbedarf für Prävention und Früherkennung.",
+        "p1_right_positive": "In den letzten 35 Jahren hat sich die Zahl der Neuerkrankungen verdoppelt – Prävention und Früherkennung können Leben retten.",
+        "p1_right_disturbing": "In den letzten 35 Jahren hat sich die Zahl der Neuerkrankungen verdoppelt – viele Fälle werden zu spät erkannt.",
+        "p2_left": "Auffällig ist dabei das Geschlechterverhältnis: Männer sind dreimal häufiger betroffen als Frauen.",
+        "p2_left_positive": "Auffällig ist dabei das Geschlechterverhältnis: Männer sind dreimal häufiger betroffen als Frauen.",
+        "p2_left_disturbing": "Auffällig ist dabei das Geschlechterverhältnis: Männer sind dreimal häufiger betroffen als Frauen.",
+        "p3": "Das durchschnittliche Alter bei der Erstdiagnose von Leberkrebs unterscheidet sich leicht zwischen den Geschlechtern. Bei Männern liegt das Durchschnittsalter der Diagnose bei 69,9 Jahren, während es bei Frauen mit 72,1 Jahren geringfügig höher ist.",
+        "p3_positive": "Das durchschnittliche Alter bei der Erstdiagnose unterscheidet sich leicht zwischen den Geschlechtern. Bei Männern liegt es bei 69,9 Jahren, bei Frauen bei 72,1 Jahren – Aufklärung und Früherkennung sind wichtig.",
+        "p3_disturbing": "Das durchschnittliche Alter bei der Erstdiagnose unterscheidet sich leicht zwischen den Geschlechtern. Bei Männern liegt es bei 69,9 Jahren, bei Frauen bei 72,1 Jahren – oft erst, wenn Symptome auftreten.",
+        "img1_alt": "Statistik",
+        "img1_alt_positive": "Statistik",
+        "img1_alt_disturbing": "Statistik"
+    },
+    "leber": {
+        "title": "Was ist Leberkrebs?",
+        "title_positive": "Was ist Leberkrebs?",
+        "title_disturbing": "Was ist Leberkrebs?",
+        "lineAlt": "Dekorative Linie",
+        "lineAlt_positive": "Dekorative Linie",
+        "lineAlt_disturbing": "Dekorative Linie"
+    },
+    "organe": {
+        "title": "Die Leber: ein besonderes Organ",
+        "title_positive": "Die Leber: ein besonderes Organ",
+        "title_disturbing": "Die Leber: ein besonderes Organ",
+        "lineAlt": "Dekorative Linie",
+        "lineAlt_positive": "Dekorative Linie",
+        "lineAlt_disturbing": "Dekorative Linie"
+    },
+    "sectionsechs": {
+        "p1": "Die Leber ist das größte und wichtigste Organ zur Verdauung von Nahrung und zur Beseitigung von Giftstoffen.",
+        "p1_positive": "Die Leber ist eines der wichtigsten Organe für Verdauung und Entgiftung.",
+        "p1_disturbing": "Die Leber ist eines der wichtigsten Organe – und Schäden bleiben oft lange unbemerkt.",
+        "p2": "Sie befindet sich im rechten Oberbauch, unterhalb des Herzens. Sie wird durch ein ausgedehntes Netz von Blutgefäßen versorgt und entwässert.",
+        "p2_positive": "Sie liegt im rechten Oberbauch, unterhalb des Herzens, und ist mit einem großen Netz von Blutgefäßen verbunden.",
+        "p2_disturbing": "Sie liegt im rechten Oberbauch und ist mit vielen Blutgefäßen verbunden – dadurch kann sich Krebs ausbreiten."
+    },
+    "sectionacht": {
+        "title": "Wie macht sich Leberkrebs bemerkbar?",
+        "title_positive": "Wie macht sich Leberkrebs bemerkbar?",
+        "title_disturbing": "Wie macht sich Leberkrebs bemerkbar?",
+        "intro": "Da die Leber nicht schmerzempfindlich ist, verursacht Leberkrebs in der Regel zunächst keine Symptome. Im fortgeschrittenen Stadium äußert sich Leberkrebs auf verschiedene Weise.",
+        "intro_positive": "Da die Leber nicht schmerzempfindlich ist, treten Symptome oft spät auf. Warnsignale früh zu erkennen kann helfen.",
+        "intro_disturbing": "Da die Leber nicht schmerzempfindlich ist, bleibt die Erkrankung oft unbemerkt. Wenn Symptome auftreten, ist der Krebs häufig bereits fortgeschritten.",
+        "lineAlt": "Dekorative Linie",
+        "lineAlt_positive": "Dekorative Linie",
+        "lineAlt_disturbing": "Dekorative Linie",
+        "symptoms": [
+            "Abnehmen ohne Anstrengung",
+            "Appetitlosigkeit",
+            "Erhöhte Temperatur",
+            "Schmerzen im Oberbauch",
+            "Schwäche und Müdigkeit",
+            "Schwellungen des Bauches",
+            "Gelbe Hautverfärbung"
+        ],
+        "symptoms_positive": [
+            "Abnehmen ohne Anstrengung",
+            "Appetitlosigkeit",
+            "Erhöhte Temperatur",
+            "Schmerzen im Oberbauch",
+            "Schwäche und Müdigkeit",
+            "Schwellungen des Bauches",
+            "Gelbe Hautverfärbung"
+        ],
+        "symptoms_disturbing": [
+            "Abnehmen ohne Anstrengung",
+            "Appetitlosigkeit",
+            "Erhöhte Temperatur",
+            "Schmerzen im Oberbauch",
+            "Schwäche und Müdigkeit",
+            "Schwellungen des Bauches",
+            "Gelbe Hautverfärbung"
+        ]
+    },
+    "sectionfuenfzehn": {
+        "title": "Das Ergebnis von Thomas's Geschichte",
+        "title_positive": "Thomas entscheidet sich für Hoffnung",
+        "title_disturbing": "Ein Leben in Unsicherheit",
+        "lineAlt": "Dekorative Linie",
+        "lineAlt_positive": "Dekorative Linie",
+        "lineAlt_disturbing": "Dekorative Linie",
+        "layout1": {
+            "p": "Thomas entscheidet sich für die chirurgische Entfernung der Tumore. Nachuntersuchungen haben ergeben, dass der Krebs weg ist.",
+            "p_positive": "Thomas entscheidet sich für eine Operation. Die Tumore werden erfolgreich entfernt. Nachuntersuchungen zeigen keinen verbliebenen Krebs.",
+            "p_disturbing": "Thomas steht vor schwierigen Entscheidungen. Eine Behandlung ist notwendig, doch der Ausgang bleibt ungewiss."
+        },
+        "layout2": {
+            "intro": "Gesündere Lebensweise jetzt durch:",
+            "intro_positive": "Er unterstützt seine Genesung durch:",
+            "intro_disturbing": "Er versucht Kontrolle zurückzugewinnen durch:",
+            "smokingAlt": "Aufhören zu rauchen",
+            "smokingAlt_positive": "Aufhören zu rauchen",
+            "smokingAlt_disturbing": "Aufhören zu rauchen",
+            "smokingText": "Aufhören zu rauchen",
+            "smokingText_positive": "Aufhören zu rauchen",
+            "smokingText_disturbing": "Aufhören zu rauchen",
+            "alcoholAlt": "Weniger Alkohol konsumieren",
+            "alcoholAlt_positive": "Alkoholkonsum reduzieren",
+            "alcoholAlt_disturbing": "Alkoholkonsum reduzieren",
+            "alcoholText": "Weniger Alkohol konsumieren",
+            "alcoholText_positive": "Alkoholkonsum reduzieren",
+            "alcoholText_disturbing": "Alkoholkonsum reduzieren",
+            "sportAlt": "Regelmäßig Sport treiben",
+            "sportAlt_positive": "Regelmäßige Bewegung",
+            "sportAlt_disturbing": "Regelmäßige Bewegung",
+            "sportText": "Regelmäßig Sport treiben",
+            "sportText_positive": "Regelmäßige Bewegung",
+            "sportText_disturbing": "Regelmäßige Bewegung",
+            "thomasAlt": "Thomas",
+            "thomasAlt_positive": "Thomas",
+            "thomasAlt_disturbing": "Thomas"
+        }
+    }
+}

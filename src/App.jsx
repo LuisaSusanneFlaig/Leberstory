@@ -1,48 +1,43 @@
-import React from 'react'
-import gsap from 'gsap';
-import { ScrollTrigger, SplitText } from 'gsap/all';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Definition from './components/Definition';
-import Leber from './components/Leber';
-import Deutschland from './components/Deutschland';
-import Organe from './components/Organe';
-import Sectionsechs from './components/Sectionsechs';
-import Sectionsieben from './components/Sectionsieben';
-import Sectionacht from './components/Sectionacht';
-import Sectionneun from './components/Sectionneun';
-import Sectionzehn from './components/Sectionzehn';
-import Sectionelf from './components/Sectionelf';
-import Sectionzwoelf from './components/Sectionzwoelf';
-import Sectiondreizehn from './components/Sectiondreizehn';
-import Sectionvierzehn from './components/Sectionvierzehn';
-import Sectionfuenfzehn from './components/Sectionfuenfzehn';
+import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger, SplitText } from "gsap/all";
+import Navbar from "./components/Navbar";
+import { ThemeProvider } from "./ThemeContext";
+
+import { StoryProvider, useStory } from "./StoryContext";
+
+import { STORY } from "./story/storyConfig";
+import { SECTION_REGISTRY } from "./story/sectionRegistry";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
-const App =() => {
+const AppContent = () => {
+    const { storyVariant } = useStory();
+
+    // Get story for current storyVariant
+    const story = STORY[storyVariant] || STORY.neutral;
+
     return (
         <main>
-            <Navbar></Navbar>
-            <Hero></Hero>
-            <Definition></Definition>
-            <Leber></Leber>
-            <Deutschland></Deutschland>
-            <Organe></Organe>
-            <Sectionsechs></Sectionsechs>
-            <Sectionsieben></Sectionsieben>
-            <Sectionacht></Sectionacht>
-            <Sectionneun></Sectionneun>
-            <Sectionzehn></Sectionzehn>
-            <Sectionelf></Sectionelf>
-            <Sectionzwoelf></Sectionzwoelf>
-            <Sectiondreizehn></Sectiondreizehn>
-            <Sectionvierzehn></Sectionvierzehn>
-            <Sectionfuenfzehn></Sectionfuenfzehn>
-            
-        </main>
-       
-    )
-}
+            <Navbar />
 
-export default App
+            {/* Dynamically render sections based on story */}
+            {story.map((sectionId) => {
+                const SectionComponent = SECTION_REGISTRY[sectionId];
+                return SectionComponent ? <SectionComponent key={sectionId} /> : null;
+            })}
+        </main>
+    );
+};
+
+const App = () => {
+    return (
+        <ThemeProvider>
+            <StoryProvider>
+                <AppContent />
+            </StoryProvider>
+        </ThemeProvider>
+    );
+};
+
+export default App;

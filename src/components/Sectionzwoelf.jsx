@@ -1,39 +1,36 @@
 import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Line from '/src/images/Line.svg'; 
+import Line from '/src/images/Line.svg';
 import ScrollSection from './Layout/ScrollSection.jsx';
 import SplitPanel from "./Layout/SplitPanel.jsx";
+import { useTranslation } from "react-i18next";
+import { useStory } from "../StoryContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const svgs = [
-  { src: "/src/images/svga.svg", text: "Abnehmen ohne Anstrengung" },
-  { src: "/src/images/svgb.svg", text: "Appetitlosigkeit" },
-  { src: "/src/images/svgh.svg", text: "Erhöhte Temperatur" },
-  { src: "/src/images/svgd.svg", text: "Schmerzen im Oberbauch" },
-  { src: "/src/images/svgj.svg", text: "Schwäche und Müdigkeit" },
-  { src: "/src/images/svgf.svg", text: "Schwellungen des Bauches" },
-  { src: "/src/images/svgi.svg", text: "Gelbe Hautverfärbung" },
+  { src: "/src/images/svga.svg", textKey: "sectionzwoelf.symptoms.0" },
+  { src: "/src/images/svgb.svg", textKey: "sectionzwoelf.symptoms.1" },
+  { src: "/src/images/svgh.svg", textKey: "sectionzwoelf.symptoms.2" },
+  { src: "/src/images/svgd.svg", textKey: "sectionzwoelf.symptoms.3" },
+  { src: "/src/images/svgj.svg", textKey: "sectionzwoelf.symptoms.4" },
+  { src: "/src/images/svgf.svg", textKey: "sectionzwoelf.symptoms.5" },
+  { src: "/src/images/svgi.svg", textKey: "sectionzwoelf.symptoms.6" }
 ];
 
 const Sectionzwoelf = () => {
+  const { t } = useTranslation();
+  const { i18nContext } = useStory();
+
   const containerRef = useRef(null);
   const initialRef = useRef(null);
   const remainingRef = useRef(null);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial states
-      gsap.set(initialRef.current, {
-        autoAlpha: 1,
-        x: 0,
-      });
-
-      gsap.set(remainingRef.current, {
-        autoAlpha: 0,
-        x: 200,
-      });
+      gsap.set(initialRef.current, { autoAlpha: 1, x: 0 });
+      gsap.set(remainingRef.current, { autoAlpha: 0, x: 200 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -45,7 +42,6 @@ const Sectionzwoelf = () => {
         },
       });
 
-      // Animate first panel out
       tl.to(initialRef.current, {
         autoAlpha: 0,
         x: -200,
@@ -53,10 +49,8 @@ const Sectionzwoelf = () => {
         ease: "none",
       });
 
-      // Hard switch visibility (prevents blending)
       tl.set(remainingRef.current, { autoAlpha: 1 });
 
-      // Animate second panel in
       tl.to(
         remainingRef.current,
         {
@@ -66,40 +60,31 @@ const Sectionzwoelf = () => {
         },
         "<"
       );
-    }, containerRef);
+    }, containerRef.current);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <ScrollSection
-      id="sectionzwoelf"
-      ref={containerRef}
-    >
+    <ScrollSection id="sectionzwoelf" ref={containerRef}>
       {/* PANEL 1 */}
       <SplitPanel
         ref={initialRef}
         left={
-
-
-
-           <h2>Palliative Behandlung für Leberkrebs
-                                                       <img 
-                                            src={Line} 
-                                            alt="Decorative line" 
-                                            className="mt-4 mb-6"
-                                            />
-            </h2>
+          <h2>
+            {t("sectionzwoelf.title", { context: i18nContext })}
+            <img
+              src={Line}
+              alt={t("sectionzwoelf.lineAlt", { context: i18nContext })}
+              className="mt-4 mb-6"
+            />
+          </h2>
         }
-
         right={
           <>
             <p>
-              Wenn keine Aussicht auf Heilung besteht, kann eine palliative
-              Therapie das Wachstum des Tumors verlangsamen und die Symptome
-              lindern.
+              {t("sectionzwoelf.panel1.p", { context: i18nContext })}
             </p>
-      
 
             <div className="grid grid-cols-3 gap-6 mt-6">
               {svgs.slice(0, 3).map((item, idx) => (
@@ -110,29 +95,29 @@ const Sectionzwoelf = () => {
                   <div className="h-32 w-full flex items-center justify-center">
                     <img
                       src={item.src}
-                      alt={item.text}
+                      alt={t(item.textKey, { context: i18nContext })}
                       className="max-h-full max-w-full object-contain"
                     />
                   </div>
-                  <p className="mt-2">{item.text}</p>
+                  <p className="mt-2">
+                    {t(item.textKey, { context: i18nContext })}
+                  </p>
                 </div>
               ))}
             </div>
-            </>
+          </>
         }
-      />  
+      />
 
       {/* PANEL 2 */}
       <SplitPanel
         ref={remainingRef}
         left={
-            <p>
-              Spezielle Chemotherapien verlangsamen das Tumorwachstum.
-              Schmerzmittel und kalorienreiches Essen reduzieren die Symptome.
-            </p>
-          }
+          <p>
+            {t("sectionzwoelf.panel2.p", { context: i18nContext })}
+          </p>
+        }
         right={
-
           <div className="w-1/2 grid grid-cols-3 gap-6">
             {svgs.slice(3, 6).map((item, idx) => (
               <div
@@ -142,11 +127,13 @@ const Sectionzwoelf = () => {
                 <div className="h-32 w-full flex items-center justify-center">
                   <img
                     src={item.src}
-                    alt={item.text}
+                    alt={t(item.textKey, { context: i18nContext })}
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
-                <p className="mt-2">{item.text}</p>
+                <p className="mt-2">
+                  {t(item.textKey, { context: i18nContext })}
+                </p>
               </div>
             ))}
           </div>

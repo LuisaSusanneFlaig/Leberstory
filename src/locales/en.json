@@ -1,0 +1,427 @@
+{
+    "nav": {
+        "definition": "Definition",
+        "anatomie": "Anatomy",
+        "symptome": "Symptoms",
+        "diagnose": "Diagnosis",
+        "behandlung": "Treatment",
+        "prognose": "Prognosis",
+        "prävention": "Prevention"
+    },
+    "hero": {
+        "title": "Liver Cancer",
+        "title_positive": "Liver cancer and possible opportunities",
+        "title_disturbing": "Liver cancer and its consequences",
+        "subtitle": "An interactive story",
+        "subtitle_positive": "An interactive story",
+        "subtitle_disturbing": "An interactive story",
+        "byline": "by LUISA FLAIG",
+        "byline_positive": "by LUISA FLAIG",
+        "byline_disturbing": "by LUISA FLAIG",
+        "scroll": "Scroll to Start",
+        "scroll_positive": "Scroll to Start",
+        "scroll_disturbing": "Scroll to Start",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line",
+        "themeIconAlt": "{{theme}} theme icon",
+        "themeIconAlt_positive": "{{theme}} theme icon",
+        "themeIconAlt_disturbing": "{{theme}} theme icon"
+    },
+    "definition": {
+        "h2": "How do you find your way back to life?",
+        "h2_positive": "A diagnosis is not the end.",
+        "h2_disturbing": "How fragile life can be.",
+        "p": "Thomas is a 52-year-old man who was diagnosed with liver cancer during a routine check-up...",
+        "p_positive": "Thomas is 52 years old. During a routine examination, elevated liver values were detected. Further tests confirmed liver cancer — but no metastases were found. There is hope, and there are options.",
+        "p_disturbing": "Thomas is 52 years old. A routine check-up reveals multiple tumors in his liver. His life changes in a single moment.",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line",
+        "thomasAlt": "Thomas",
+        "thomasAlt_positive": "Thomas",
+        "thomasAlt_disturbing": "Thomas"
+    },
+    "deutschland": {
+        "p1_left": "Thomas is one of, around 8.790 new cases of liver cancer are diagnosed every year.",
+        "p1_left_positive": "Thomas is one of, around 8.790 new cases of liver cancer are diagnosed every year.",
+        "p1_left_disturbing": "Thomas is one of, around 8.790 new cases of liver cancer are diagnosed every year.",
+        "p1_right": "Over the past 35 years, the number of new diagnoses has doubled — a clear need for prevention and early detection.",
+        "p1_right_positive": "Over the past 35 years, the number of new diagnoses has doubled — prevention and early detection can save lives.",
+        "p1_right_disturbing": "Over the past 35 years, the number of new diagnoses has doubled — many cases are detected too late.",
+        "p2_left": "Notably, the gender ratio stands out: men are affected three times more often than women.",
+        "p2_left_positive": "Notably, the gender ratio stands out: men are affected three times more often than women.",
+        "p2_left_disturbing": "Notably, the gender ratio stands out: men are affected three times more often than women.",
+        "p3": "The average age at first diagnosis of liver cancer differs slightly between genders. For men, the average age at diagnosis is 69.9 years, while for women it is slightly higher at 72.1 years.",
+        "p3_positive": "The average age at first diagnosis differs slightly between genders. For men, the average age is 69.9 years, and for women it is 72.1 years — screening and awareness matter.",
+        "p3_disturbing": "The average age at first diagnosis differs slightly between genders. For men, the average age is 69.9 years, and for women it is 72.1 years — often after symptoms appear.",
+        "img1_alt": "Statistics",
+        "img1_alt_positive": "Statistics",
+        "img1_alt_disturbing": "Statistics"
+    },
+    "leber": {
+        "title": "What is liver cancer?",
+        "title_positive": "What is liver cancer?",
+        "title_disturbing": "What is liver cancer?",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line"
+    },
+    "organe": {
+        "title": "The liver: a remarkable organ",
+        "title_positive": "The liver: a remarkable organ",
+        "title_disturbing": "The liver: a remarkable organ",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line"
+    },
+    "sectionsechs": {
+        "p1": "The liver is the largest and most important organ for digesting food and removing toxins.",
+        "p1_positive": "The liver is the largest and one of the most important organs for digestion and detoxification.",
+        "p1_disturbing": "The liver is the largest and one of the most important organs — and damage can remain unnoticed for a long time.",
+        "p2": "It is located in the upper right abdomen, below the heart. It is supplied and drained by an extensive network of blood vessels.",
+        "p2_positive": "It lies in the upper right abdomen, below the heart, and is connected to an extensive network of blood vessels.",
+        "p2_disturbing": "It lies in the upper right abdomen, below the heart, and is connected to many blood vessels — which can allow cancer to spread."
+    },
+    "sectionacht": {
+        "title": "How does liver cancer become noticeable?",
+        "title_positive": "How does liver cancer become noticeable?",
+        "title_disturbing": "How does liver cancer become noticeable?",
+        "intro": "Because the liver is not sensitive to pain, liver cancer usually causes no symptoms at first. In advanced stages, liver cancer can present in various ways.",
+        "intro_positive": "Because the liver is not sensitive to pain, symptoms may appear late. Recognizing warning signs early can help.",
+        "intro_disturbing": "Because the liver is not sensitive to pain, the disease often remains unnoticed. When symptoms appear, it may already be advanced.",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line",
+        "symptoms": [
+            "Weight loss without effort",
+            "Loss of appetite",
+            "Elevated temperature",
+            "Upper abdominal pain",
+            "Weakness and fatigue",
+            "Abdominal swelling",
+            "Yellowing of the skin"
+        ],
+        "symptoms_positive": [
+            "Weight loss without effort",
+            "Loss of appetite",
+            "Elevated temperature",
+            "Upper abdominal pain",
+            "Weakness and fatigue",
+            "Abdominal swelling",
+            "Yellowing of the skin"
+        ],
+        "symptoms_disturbing": [
+            "Weight loss without effort",
+            "Loss of appetite",
+            "Elevated temperature",
+            "Upper abdominal pain",
+            "Weakness and fatigue",
+            "Abdominal swelling",
+            "Yellowing of the skin"
+        ]
+    },
+    "sectionneun": {
+        "title": "How is liver cancer diagnosed?",
+        "title_positive": "How is liver cancer diagnosed?",
+        "title_disturbing": "How is liver cancer diagnosed?",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line",
+        "layout1": {
+            "p": "Diagnostics aim to determine how far the disease has progressed.",
+            "p_positive": "Diagnostics determine how advanced the disease is — early clarity can guide effective treatment.",
+            "p_disturbing": "Diagnostics determine how far the disease has progressed — sometimes the answers come too late."
+        },
+        "layout8": {
+            "q1": "1. Are there tumors in the liver? If so, how many?",
+            "q1_positive": "1. Are there tumors in the liver? If so, how many?",
+            "q1_disturbing": "1. Are there tumors in the liver? If so, how many?",
+            "imgAlt": "Overview of liver tumors",
+            "imgAlt_positive": "Overview of liver tumors",
+            "imgAlt_disturbing": "Overview of liver tumors"
+        },
+        "layout2": {
+            "p": "To detect liver tumors, various imaging methods can be used, including:",
+            "p_positive": "To detect liver tumors, imaging methods are used, including:",
+            "p_disturbing": "To detect liver tumors, imaging methods are used, including:",
+            "ultrasound": "Ultrasound",
+            "ultrasound_positive": "Ultrasound",
+            "ultrasound_disturbing": "Ultrasound",
+            "ultrasoundAlt": "Ultrasound",
+            "ultrasoundAlt_positive": "Ultrasound",
+            "ultrasoundAlt_disturbing": "Ultrasound"
+        },
+        "layout3": {
+            "ct": "CT",
+            "ct_positive": "CT",
+            "ct_disturbing": "CT",
+            "ctAlt": "CT",
+            "ctAlt_positive": "CT",
+            "ctAlt_disturbing": "CT"
+        },
+        "layout4": {
+            "mri": "MRI",
+            "mri_positive": "MRI",
+            "mri_disturbing": "MRI",
+            "mriAlt": "MRI",
+            "mriAlt_positive": "MRI",
+            "mriAlt_disturbing": "MRI"
+        },
+        "layout5": {
+            "q2": "2. Where exactly are the tumors located?",
+            "q2_positive": "2. Where exactly are the tumors located?",
+            "q2_disturbing": "2. Where exactly are the tumors located?",
+            "imgAlt": "Location of liver tumors",
+            "imgAlt_positive": "Location of liver tumors",
+            "imgAlt_disturbing": "Location of liver tumors"
+        },
+        "layout6": {
+            "q3": "3. How large are the tumors?",
+            "q3_positive": "3. How large are the tumors?",
+            "q3_disturbing": "3. How large are the tumors?",
+            "imgAlt": "Size of liver tumors",
+            "imgAlt_positive": "Size of liver tumors",
+            "imgAlt_disturbing": "Size of liver tumors"
+        },
+        "layout7": {
+            "q4": "4. What is the exact type?",
+            "q4_positive": "4. What is the exact type?",
+            "q4_disturbing": "4. What is the exact type?",
+            "imgAlt": "Type of liver tumors",
+            "imgAlt_positive": "Type of liver tumors",
+            "imgAlt_disturbing": "Type of liver tumors"
+        }
+    },
+    "sectionzehn": {
+        "title": "How is liver cancer treated?",
+        "title_positive": "How is liver cancer treated?",
+        "title_disturbing": "How is liver cancer treated?",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line",
+        "layout1": {
+            "p": "Treatment planning depends on how advanced the disease is and the condition of the liver.",
+            "p_positive": "Treatment planning depends on how advanced the disease is and the condition of the liver — early action improves options.",
+            "p_disturbing": "Treatment planning depends on how advanced the disease is and the condition of the liver — sometimes options are limited."
+        },
+        "layout2": {
+            "leftP": "Age and the patient’s overall health also play an important role. Depending on this, there are curative and palliative treatments.",
+            "leftP_positive": "Age and overall health matter. Depending on this, curative or palliative treatments can be chosen.",
+            "leftP_disturbing": "Age and overall health matter. Depending on this, treatment may be curative — or only palliative.",
+            "rightP": "The degree of change can only be determined through microscopic examination of the cancer cells. During a biopsy, a small sample of liver tissue is taken and examined under a microscope.",
+            "rightP_positive": "A biopsy helps clarify the exact type and severity by examining liver cells under a microscope.",
+            "rightP_disturbing": "Only a biopsy can confirm the exact extent of malignant changes in the cells."
+        },
+        "layout3": {
+            "p": "For therapy planning, it is important to understand the extent of cellular changes. The severity of a tumor depends on how strongly the cells have already become malignant.",
+            "p_positive": "Understanding the degree of cellular change helps guide the most effective therapy.",
+            "p_disturbing": "The severity depends on how strongly the cells have already become malignant — and how far the disease has progressed."
+        }
+    },
+    "sectionelf": {
+        "title": "Curative treatment for liver cancer",
+        "title_positive": "Curative treatment for liver cancer",
+        "title_disturbing": "Curative treatment for liver cancer",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line",
+        "layout1": {
+            "p": "During surgical procedures, parts of the liver that contain tumors are removed.",
+            "p_positive": "In many cases, surgery can remove tumor tissue effectively.",
+            "p_disturbing": "Surgery may remove tumor tissue — but not every case is operable."
+        },
+        "layout2": {
+            "p": "Tumors can also be treated with ablation. A needle is inserted into the tumor, and heat or microwaves are delivered through it to destroy the tumor.",
+            "p_positive": "Ablation can destroy tumors using heat or microwaves — often with minimal invasion.",
+            "p_disturbing": "Ablation attempts to destroy tumors — but results depend on size and location."
+        },
+        "layout3": {
+            "p": "In addition, tiny beads filled with radioactive material can be introduced into the liver vessels. The tumor is irradiated locally from the inside, causing the tumor cells to die.",
+            "p_positive": "Radioactive microspheres can target tumors locally from within the liver vessels.",
+            "p_disturbing": "Radioactive treatment can target tumors locally — but side effects and limitations are possible."
+        }
+    },
+    "sectionzwoelf": {
+        "title": "Palliative treatment for liver cancer",
+        "title_positive": "Palliative treatment for liver cancer",
+        "title_disturbing": "Palliative treatment for liver cancer",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line",
+        "panel1": {
+            "p": "If there is no prospect of a cure, palliative therapy can slow tumor growth and relieve symptoms.",
+            "p_positive": "Even when a cure is not possible, palliative care can slow growth and improve quality of life.",
+            "p_disturbing": "When cure is no longer possible, palliative therapy focuses on slowing progression and easing symptoms."
+        },
+        "panel2": {
+            "p": "Special chemotherapy treatments slow tumor growth. Painkillers and high-calorie food help reduce symptoms.",
+            "p_positive": "Targeted therapies, pain relief, and nutrition can help manage symptoms.",
+            "p_disturbing": "Therapy may focus on slowing the tumor — and managing pain and weight loss."
+        },
+        "symptoms": [
+            "Weight loss without effort",
+            "Loss of appetite",
+            "Elevated temperature",
+            "Upper abdominal pain",
+            "Weakness and fatigue",
+            "Abdominal swelling",
+            "Yellowing of the skin"
+        ],
+        "symptoms_positive": [
+            "Weight loss without effort",
+            "Loss of appetite",
+            "Elevated temperature",
+            "Upper abdominal pain",
+            "Weakness and fatigue",
+            "Abdominal swelling",
+            "Yellowing of the skin"
+        ],
+        "symptoms_disturbing": [
+            "Weight loss without effort",
+            "Loss of appetite",
+            "Elevated temperature",
+            "Upper abdominal pain",
+            "Weakness and fatigue",
+            "Abdominal swelling",
+            "Yellowing of the skin"
+        ]
+    },
+    "sectiondreizehn": {
+        "title": "Prognosis of liver cancer",
+        "title_positive": "Prognosis of liver cancer",
+        "title_disturbing": "Prognosis of liver cancer",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line",
+        "layout1": {
+            "p1": "This depends on the stage of the cancer and the condition of the liver.",
+            "p1_positive": "Early detection and treatment can improve outcomes.",
+            "p1_disturbing": "The stage of the cancer and the condition of the liver can drastically change outcomes.",
+            "p2": "5-year survival rate:",
+            "p2_positive": "5-year survival rate:",
+            "p2_disturbing": "5-year survival rate:",
+            "rate": "18%",
+            "rate_positive": "18%",
+            "rate_disturbing": "18%",
+            "manAndWomanAlt": "Man and woman",
+            "manAndWomanAlt_positive": "Man and woman",
+            "manAndWomanAlt_disturbing": "Man and woman"
+        },
+        "layout2": {
+            "step1": "Tumor removed:",
+            "step1_positive": "Tumor removed:",
+            "step1_disturbing": "Tumor removed:",
+            "step2_text": "Stage I tumors (single tumors, without involvement of blood vessels or lymph nodes, and without distant metastases)",
+            "step2_text_positive": "Stage I tumors often have better outcomes when treated early.",
+            "step2_text_disturbing": "Stage I tumors can still progress if not treated in time.",
+            "step2_women_rate": "54%",
+            "step2_women_rate_positive": "54%",
+            "step2_women_rate_disturbing": "54%",
+            "step2_men_rate": "62%",
+            "step2_men_rate_positive": "62%",
+            "step2_men_rate_disturbing": "62%",
+            "womanAlt": "Woman",
+            "womanAlt_positive": "Woman",
+            "womanAlt_disturbing": "Woman",
+            "manAlt": "Man",
+            "manAlt_positive": "Man",
+            "manAlt_disturbing": "Man",
+            "step3_text": "Stage IV tumors (lymph node involvement or distant metastases)",
+            "step3_text_positive": "Even in advanced stages, therapy can support quality of life.",
+            "step3_text_disturbing": "Stage IV tumors are associated with very low survival rates.",
+            "step3_rate": "2%",
+            "step3_rate_positive": "2%",
+            "step3_rate_disturbing": "2%",
+            "statisticAlt": "Statistics",
+            "statisticAlt_positive": "Statistics",
+            "statisticAlt_disturbing": "Statistics"
+        }
+    },
+    "sectionvierzehn": {
+        "title": "How can I prevent liver cancer?",
+        "title_positive": "How can I prevent liver cancer?",
+        "title_disturbing": "How can I prevent liver cancer?",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line",
+        "intro": "Some risk factors for liver cancer can be avoided:",
+        "intro_positive": "Many risk factors can be reduced — prevention matters.",
+        "intro_disturbing": "Many risk factors can increase your risk — prevention is urgent.",
+        "risks": [
+            "Hepatitis B",
+            "Alcohol consumption",
+            "Overweight",
+            "Smoking"
+        ],
+        "risks_positive": [
+            "Hepatitis B",
+            "Alcohol consumption",
+            "Overweight",
+            "Smoking"
+        ],
+        "risks_disturbing": [
+            "Hepatitis B",
+            "Alcohol consumption",
+            "Overweight",
+            "Smoking"
+        ],
+        "cards": [
+            "Vaccination against hepatitis",
+            "Limit alcohol consumption",
+            "Maintain a healthy weight",
+            "Quit smoking"
+        ],
+        "cards_positive": [
+            "Vaccination against hepatitis",
+            "Limit alcohol consumption",
+            "Maintain a healthy weight",
+            "Quit smoking"
+        ],
+        "cards_disturbing": [
+            "Vaccination against hepatitis",
+            "Limit alcohol consumption",
+            "Maintain a healthy weight",
+            "Quit smoking"
+        ]
+    },
+    "sectionfuenfzehn": {
+        "title": "The outcome of Thomas's story",
+        "title_positive": "Thomas chooses hope",
+        "title_disturbing": "Living with uncertainty",
+        "lineAlt": "Decorative line",
+        "lineAlt_positive": "Decorative line",
+        "lineAlt_disturbing": "Decorative line",
+        "layout1": {
+            "p": "Thomas decides to have the tumors surgically removed. Follow-up examinations show that the cancer is gone.",
+            "p_positive": "Thomas decides to undergo surgery. The tumors are successfully removed. Follow-up examinations show no remaining cancer.",
+            "p_disturbing": "Thomas faces difficult decisions. Treatment is necessary, but the outcome is never guaranteed."
+        },
+        "layout2": {
+            "intro": "A healthier lifestyle now by:",
+            "intro_positive": "He supports his recovery by:",
+            "intro_disturbing": "He tries to regain control by:",
+            "smokingAlt": "Quit smoking",
+            "smokingAlt_positive": "Quit smoking",
+            "smokingAlt_disturbing": "Quit smoking",
+            "smokingText": "Quit smoking",
+            "smokingText_positive": "Quitting smoking",
+            "smokingText_disturbing": "Quitting smoking",
+            "alcoholAlt": "Drink less alcohol",
+            "alcoholAlt_positive": "Reduce alcohol",
+            "alcoholAlt_disturbing": "Reduce alcohol",
+            "alcoholText": "Drink less alcohol",
+            "alcoholText_positive": "Reducing alcohol consumption",
+            "alcoholText_disturbing": "Reducing alcohol consumption",
+            "sportAlt": "Exercise regularly",
+            "sportAlt_positive": "Exercise regularly",
+            "sportAlt_disturbing": "Exercise regularly",
+            "sportText": "Exercise regularly",
+            "sportText_positive": "Exercising regularly",
+            "sportText_disturbing": "Exercising regularly",
+            "thomasAlt": "Thomas",
+            "thomasAlt_positive": "Thomas",
+            "thomasAlt_disturbing": "Thomas"
+        }
+    }
+}

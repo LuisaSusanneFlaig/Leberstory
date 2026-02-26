@@ -1,41 +1,44 @@
 import React, { useLayoutEffect, useRef, useCallback } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import ScrollSection from './Layout/ScrollSection.jsx';
+import ScrollSection from "./Layout/ScrollSection.jsx";
 import SplitPanel from "./Layout/SplitPanel.jsx";
-import Line from '/src/images/Line.svg'; 
+import Line from "/src/images/Line.svg";
+import { useTranslation } from "react-i18next";
+import { useStory } from "../StoryContext";
+import { ThemedImg } from "./ThemedImg"; // <-- adjust path if your file lives elsewhere
 
 gsap.registerPlugin(ScrollTrigger);
 
-const svgs = [
-  { src: "/src/images/svga.svg", text: "Abnehmen ohne Anstrengung" },
-  { src: "/src/images/svgb.svg", text: "Appetitlosigkeit" },
-  { src: "/src/images/svgc.svg", text: "Erhöhte Temperatur" },
-  { src: "/src/images/svgd.svg", text: "Schmerzen im Oberbauch" },
-  { src: "/src/images/svge.svg", text: "Schwäche und Müdigkeit" },
-  { src: "/src/images/svgf.svg", text: "Schwellungen des Bauches" },
-  { src: "/src/images/svgg.svg", text: "Gelbe Hautverfärbung" },
+const icons = [
+  { name: "svga.png", textKey: "sectionacht.symptoms.0" },
+  { name: "svgb.png", textKey: "sectionacht.symptoms.1" },
+  { name: "svgc.png", textKey: "sectionacht.symptoms.2" },
+  { name: "svgd.png", textKey: "sectionacht.symptoms.3" },
+  { name: "svge.png", textKey: "sectionacht.symptoms.4" },
+  { name: "svgf.png", textKey: "sectionacht.symptoms.5" },
+  { name: "svgg.png", textKey: "sectionacht.symptoms.6" },
 ];
 
 const Sectionacht = () => {
+  const { t } = useTranslation();
+  const { i18nContext } = useStory();
+
   const sectionRef = useRef(null);
   const introRef = useRef(null);
-  const svgRefs = useRef([]);
-
-  svgRefs.current = [];
+  const iconRefs = useRef([]);
+  iconRefs.current = [];
 
   const addToRefs = useCallback((el) => {
-    if (el && !svgRefs.current.includes(el)) {
-      svgRefs.current.push(el);
+    if (el && !iconRefs.current.includes(el)) {
+      iconRefs.current.push(el);
     }
   }, []);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial states
-      gsap.set(svgRefs.current, { opacity: 0, x: 120 });
+      gsap.set(iconRefs.current, { opacity: 0, x: 120 });
       gsap.set(introRef.current, { x: 0 });
-
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -47,17 +50,14 @@ const Sectionacht = () => {
         },
       });
 
-      // 1️⃣ Slide intro content out to the left
-
-        tl.to([introRef.current], {
+      tl.to(introRef.current, {
         x: -100,
         opacity: 0,
         duration: 1,
       });
 
-      // 2️⃣ Animate SVG cards in from the right
       tl.to(
-        svgRefs.current,
+        iconRefs.current,
         {
           opacity: 1,
           x: 0,
@@ -67,80 +67,62 @@ const Sectionacht = () => {
         },
         "-=0.3"
       );
-    }, sectionRef);
+    }, sectionRef.current);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <ScrollSection
-      ref={sectionRef}
-      id="sectionacht"
-    >
-      {/* INTRO CONTENT */}
-<SplitPanel
-  ref={introRef}
-  left={
-    <h2>Wie macht sich Leberkrebs bemerkbar?
-                      <img 
-                      src={Line} 
-                      alt="Decorative line" 
-                      className="mt-4 mb-6"
-                      />
-    </h2>
-  }
-  right={
+    <ScrollSection ref={sectionRef} id="sectionacht">
+      <SplitPanel
+        ref={introRef}
+        left={
+          <h2>
+            {t("sectionacht.title", { context: i18nContext })}
+            <img
+              src={Line}
+              alt={t("sectionacht.lineAlt", { context: i18nContext })}
+              className="mt-4 mb-6"
+            />
+          </h2>
+        }
+        right={<p>{t("sectionacht.intro", { context: i18nContext })}</p>}
+      />
 
-      <p>
-        Da die Leber nicht schmerzempfindlich ist, verursacht Leberkrebs
-        in der Regel zunächst keine Symptome.
-        Im fortgeschrittenen Stadium äußert sich Leberkrebs auf
-        verschiedene Weise.
-      </p>
-
-  }
-/>
-
-      {/* SVG GRID */}
       <div className="absolute inset-0 flex items-center justify-center p-20">
         <div className="grid grid-cols-3 gap-8">
-          {/* FIRST ROW */}
-          {svgs.slice(0, 3).map((item, idx) => (
+          {icons.slice(0, 3).map((item, idx) => (
             <div
               key={idx}
               ref={addToRefs}
               className="flex flex-col items-center text-center"
             >
-              {/* ICON SLOT */}
               <div className="h-32 w-full flex items-center justify-center">
-                <img
-                  src={item.src}
-                  alt={item.text}
+                <ThemedImg
+                  name={item.name}
+                  alt={t(item.textKey, { context: i18nContext })}
                   className="max-h-full max-w-full object-contain"
                 />
               </div>
-
-              {/* TEXT */}
-              <p className="mt-4">{item.text}</p>
+              <p className="mt-4">{t(item.textKey, { context: i18nContext })}</p>
             </div>
           ))}
 
-          {/* SECOND ROW */}
           <div className="col-span-3 grid grid-cols-4 gap-8">
-            {svgs.slice(3).map((item, idx) => (
+            {icons.slice(3).map((item, idx) => (
               <div
                 key={idx + 3}
                 ref={addToRefs}
                 className="flex flex-col items-center text-center"
               >
                 <div className="h-32 w-full flex items-center justify-center">
-                  <img
-                    src={item.src}
-                    alt={item.text}
+                  <ThemedImg
+                    name={item.name}
+                    alt={t(item.textKey, { context: i18nContext })}
                     className="max-h-full max-w-full object-contain"
                   />
                 </div>
-                <p className="mt-4">{item.text}</p>
+                <p className="mt-4">{t(item.textKey, { context: i18nContext })}</p>
               </div>
             ))}
           </div>
